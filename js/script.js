@@ -1,111 +1,119 @@
+/**
+ * NYAZNATION Main Script v3.1
+ * - Launch: Sept 25, 2025
+ * - Web3 Optimized
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
-    // ===== 1. Smooth Scrolling =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // ===== 2. Dynamic Header =====
+    // ======================
+    // 1. INITIALIZATION
+    // ======================
+    const LAUNCH_DATE = new Date('2025-09-25T00:00:00Z');
     const header = document.querySelector('header');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(10, 10, 26, 0.95)';
-            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
-        } else {
-            header.style.background = 'rgba(10, 10, 26, 0.8)';
-            header.style.boxShadow = 'none';
-        }
-    });
+    const buyButtons = document.querySelectorAll('#buyButton, #heroBuyButton');
 
-    // ===== 3. Hero Animation =====
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.classList.add('floating');
+    // ======================
+    // 2. AUTO-SCROLLING BANNER
+    // ======================
+    function initBannerCarousel() {
+        const track = document.querySelector('.banner-track');
+        if (!track) return;
         
-        // Additional hover effect for CTA buttons
-        const ctaButtons = heroContent.querySelectorAll('.btn');
-        ctaButtons.forEach(btn => {
-            btn.addEventListener('mouseenter', () => {
-                btn.querySelector('i').style.transform = 'rotate(10deg)';
-            });
-            btn.addEventListener('mouseleave', () => {
-                btn.querySelector('i').style.transform = 'rotate(0)';
-            });
-        });
+        // Clone first banner for seamless looping
+        track.appendChild(track.children[0].cloneNode(true));
+        
+        let currentPosition = 0;
+        const bannerWidth = 100 / 4; // 25% per banner
+        
+        setInterval(() => {
+            currentPosition = (currentPosition + bannerWidth) % 100;
+            track.style.transform = `translateX(-${currentPosition}%)`;
+        }, 5000); // Change every 5 seconds
     }
 
-    // ===== 4. Icon Animations =====
-    // Social icons hover effect
-    const socialIcons = document.querySelectorAll('.social-link i');
-    socialIcons.forEach(icon => {
-        icon.parentElement.addEventListener('mouseenter', () => {
-            icon.style.transform = 'scale(1.2)';
-        });
-        icon.parentElement.addEventListener('mouseleave', () => {
-            icon.style.transform = 'scale(1)';
-        });
-    });
-
-    // Mechanic cards icon effects
-    const mechanicIcons = document.querySelectorAll('.mechanic-card i');
-    mechanicIcons.forEach(icon => {
-        icon.style.transition = 'transform 0.3s ease';
-        icon.parentElement.addEventListener('mouseenter', () => {
-            if (icon.classList.contains('fa-fire')) {
-                icon.style.transform = 'scale(1.2) translateY(-2px)';
-                icon.style.color = '#ff4500'; // Brighter fire color
-            } else {
-                icon.style.transform = 'scale(1.1)';
-            }
-        });
-        icon.parentElement.addEventListener('mouseleave', () => {
-            icon.style.transform = 'scale(1)';
-            if (icon.classList.contains('fa-fire')) {
-                icon.style.color = '';
-            }
-        });
-    });
-
-    // ===== 5. Whitepaper Tracking =====
-    const whitepaperBtn = document.querySelector('.btn-whitepaper');
-    if (whitepaperBtn) {
-        whitepaperBtn.addEventListener('click', function() {
-            // Example: Send event to analytics
-            console.log('Whitepaper download initiated');
-            // ga('send', 'event', 'Whitepaper', 'download');
-        });
+    // ======================
+    // 3. COUNTDOWN TIMER
+    // ======================
+    function updateCountdown() {
+        const now = new Date();
+        const diff = LAUNCH_DATE - now;
+        
+        // Handle post-launch state
+        if (diff <= 0) {
+            document.querySelector('.countdown-container').innerHTML = `
+                <h3> NYAZ IS LIVE ON PUMP.FUN!</h3>
+                <a href="https://pump.fun" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-coins"></i> Mint Now
+                </a>
+            `;
+            return;
+        }
+        
+        // Calculate units
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        // Update DOM
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
     }
 
-    // ===== 6. Mobile Menu (Future-Proofing) =====
-    const mobileMenuBtn = document.createElement('div');
-    mobileMenuBtn.className = 'mobile-menu-btn';
-    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    mobileMenuBtn.style.display = 'none';
-    document.querySelector('nav').appendChild(mobileMenuBtn);
-
-    function checkMobile() {
-        if (window.innerWidth <= 768) {
-            mobileMenuBtn.style.display = 'flex';
-            document.querySelector('.nav-links').style.display = 'none';
-        } else {
-            mobileMenuBtn.style.display = 'none';
-            document.querySelector('.nav-links').style.display = 'flex';
+    // ======================
+    // 4. WALLET INTEGRATION
+    // ======================
+    async function connectWallet() {
+        try {
+            const provider = window.phantom?.solana || window.solflare;
+            if (!provider) {
+                window.open('https://phantom.app/', '_blank');
+                throw new Error('Please install Phantom or Solflare');
+            }
+            
+            await provider.connect();
+            const publicKey = provider.publicKey.toString();
+            
+            // Sign verification message
+            const { signature } = await provider.signMessage(
+                new TextEncoder().encode('NYAZ Allowlist Verification')
+            );
+            
+            console.log('Wallet Connected:', {
+                publicKey: publicKey.slice(0, 8) + '...',
+                signature: signature.slice(0, 8) + '...'
+            });
+            
+            alert('Successfully joined allowlist!');
+            
+        } catch (error) {
+            console.error("Wallet Error:", error);
+            alert(`Error: ${error.message}`);
         }
     }
 
-    window.addEventListener('resize', checkMobile);
-    checkMobile(); // Initial check
-
-    mobileMenuBtn.addEventListener('click', function() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    // ======================
+    // 5. EVENT LISTENERS
+    // ======================
+    buyButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            connectWallet();
+        });
     });
+
+    window.addEventListener('scroll', () => {
+        header.style.background = window.scrollY > 100 
+            ? 'rgba(10, 10, 26, 0.95)' 
+            : 'rgba(10, 10, 26, 0.8)';
+    });
+
+    // ======================
+    // 6. INITIALIZATION
+    // ======================
+    initBannerCarousel();
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Immediate first run
 });
