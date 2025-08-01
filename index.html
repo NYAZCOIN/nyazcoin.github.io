@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYAZNATION - The Zestiest Meme Coin on Solana</title>
-    <meta name="description" content="Official NYAZ Coin - MEME  FASHION (LIFESTYLE)">
+    <meta name="description" content="Official NYAZ Coin - MEME 💬 FASHION 💮(LIFESTYLE)">
     <link rel="icon" href="assets/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -122,13 +122,15 @@
         
         /* ===== HEADER ===== */
         header {
-            background: rgba(10, 10, 26, 0.9);
+            background: rgba(10, 10, 26, 0.95);
             backdrop-filter: blur(10px);
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
             padding: 15px 0;
             transition: var(--transition);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
         
         nav {
@@ -207,7 +209,7 @@
         
         /* ===== HERO SECTION ===== */
         .hero {
-            padding: 120px 0 80px;
+            padding: 180px 0 80px;
             position: relative;
             overflow: hidden;
         }
@@ -324,6 +326,27 @@
             margin-right: 8px;
         }
         
+        .whitepaper-bar {
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(153, 69, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 800px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .whitepaper-bar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whitepaper-bar h3 {
+            color: var(--solana-green);
+            margin-bottom: 15px;
+        }
+        
         .anti-inflation {
             margin-top: 80px !important;
             margin-bottom: 30px !important;
@@ -419,7 +442,7 @@
         }
         
         .roadmap-item ul li:before {
-            content: '';
+            content: '✓';
             position: absolute;
             left: 0;
             color: var(--solana-green);
@@ -637,6 +660,10 @@
                 display: block;
             }
             
+            .hero {
+                padding-top: 150px;
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -680,7 +707,7 @@
 <body>
     <!-- Top Banner -->
     <div class="top-banner">
-        <p>MEME  FASHION (LIFESTYLE) | Zest It. Meme It. Moon It</p>
+        <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
     </div>
     
     <!-- Dynamic Banner Carousel -->
@@ -753,12 +780,11 @@
                 <div class="token-card">
                     <h3>Token Distribution</h3>
                     <ul class="distribution-list">
-                        <li><span>Presale</span> <span>40%</span></li>
-                        <li><span>Liquidity Pool</span> <span>25%</span></li>
-                        <li><span>Staking Rewards</span> <span>15%</span></li>
-                        <li><span>Marketing & Development</span> <span>10%</span></li>
-                        <li><span>Team</span> <span>5%</span></li>
-                        <li><span>Community Airdrops</span> <span>5%</span></li>
+                        <li><span>Public Sales (Pump.fun)</span> <span>50%</span></li>
+                        <li><span>Airdrops & Contests</span> <span>15%</span></li>
+                        <li><span>Apps, Staking & Integration</span> <span>15%</span></li>
+                        <li><span>Marketing & Collaboration</span> <span>10%</span></li>
+                        <li><span>Team (6-Month Vesting)</span> <span>10%</span></li>
                     </ul>
                 </div>
                 
@@ -769,10 +795,17 @@
                         <li><span>Token Symbol</span> <span>$NYAZ</span></li>
                         <li><span>Blockchain</span> <span>Solana</span></li>
                         <li><span>Total Supply</span> <span>1,000,000,000</span></li>
-                        <li><span>Initial Market Cap</span> <span>$100,000</span></li>
-                        <li><span>Contract Address</span> <span>0x...NYAZ</span></li>
+                        <li><span>Contract Address</span> <span>Coming Soon</span></li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="whitepaper-bar">
+                <h3>NYAZ Whitepaper 2.0</h3>
+                <p>Read our comprehensive whitepaper to understand the full vision and mechanics of NYAZNATION</p>
+                <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk" class="btn btn-whitepaper" target="_blank">
+                    <i class="fas fa-file-alt"></i> View Whitepaper
+                </a>
             </div>
             
             <div class="chart-container">
@@ -826,25 +859,49 @@
                 
                 <div class="roadmap-item">
                     <div class="roadmap-phase">Q4 2025</div>
-                    <h3>Phase 2: Growth & Expansion</h3>
+                    <h3>Phase 2: NFTs, Roles & Creator Rewards</h3>
                     <ul>
-                        <li>Staking platform launch</li>
                         <li>First NFT collection drop</li>
-                        <li>Major exchange listing</li>
+                        <li>NFT badges for OGs, Whales & Creators</li>
+                        <li>Creator reward system</li>
                         <li>Partnership announcements</li>
                         <li>Community events & contests</li>
                     </ul>
                 </div>
                 
                 <div class="roadmap-item">
-                    <div class="roadmap-phase">Q1 2026</div>
-                    <h3>Phase 3: Ecosystem Development</h3>
+                    <div class="roadmap-phase">Q1-Q2 2026</div>
+                    <h3>Phase 3: Merch, Staking & NYAZFI</h3>
                     <ul>
-                        <li>NYAZ merchandise store</li>
-                        <li>NYAZ debit card partnership</li>
-                        <li>Mobile wallet integration</li>
-                        <li>Charity initiatives launch</li>
-                        <li>DAO governance implementation</li>
+                        <li>NYAZ Merch Store</li>
+                        <li>Staking via NYAZFI</li>
+                        <li>Staking badge NFTs</li>
+                        <li>QR Code-linked Merch Tracking</li>
+                        <li>Meme Staking Rewards & Burn Models</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q3-Q4 2026</div>
+                    <h3>Phase 4: Meme Marketplace & Expansion</h3>
+                    <ul>
+                        <li>Launch Meme Marketplace</li>
+                        <li>Create, list, trade memes</li>
+                        <li>Integrate meme tipping and NFT flexing</li>
+                        <li>Partnerships with Solana memes & Fashion Brands</li>
+                        <li>CEX Listing & DAO Prep begins</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q1-Q2 2027</div>
+                    <h3>Phase 5: DAO Events & Global Drops</h3>
+                    <ul>
+                        <li>NYAZ DAO Voting system</li>
+                        <li>IRL Fashion Drops & Artistes Collabs</li>
+                        <li>ZestFeed blogs & Global Fashion Events</li>
+                        <li>NFT-bookings & Ad Spots</li>
+                        <li>NYAZIFY App prototype</li>
                     </ul>
                 </div>
             </div>
@@ -875,10 +932,10 @@
                     <p>Chat with the community and team members</p>
                 </a>
                 
-                <a href="https://reddit.com/r/nyaznation" class="community-card" target="_blank">
-                    <i class="fab fa-reddit"></i>
-                    <h3>Reddit</h3>
-                    <p>Join discussions and share your memes</p>
+                <a href="https://youtube.com/NYAZNATION" class="community-card" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <h3>YouTube</h3>
+                    <p>Watch our latest videos and tutorials</p>
                 </a>
             </div>
         </div>
@@ -892,10 +949,10 @@
                     <div class="logo-text">NYAZNATION</div>
                     <p>Shake It, Meme It. Moon It</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+                        <a href="https://twitter.com/nyaznation" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/nyaznation" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://discord.gg/nyaznation" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="https://youtube.com/NYAZNATION" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div>
@@ -912,10 +969,10 @@
                 <div>
                     <h3>Resources</h3>
                     <div class="footer-links">
-                        <a href="#">Whitepaper</a>
+                        <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk">Whitepaper</a>
                         <a href="#">Audit Report</a>
                         <a href="#">GitHub</a>
-                        <a href="#">FAQ</a>
+                        <a href="https://linktr.ee/nyazcoin">Linktree</a>
                     </div>
                 </div>
             </div>
@@ -952,7 +1009,7 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
                     
@@ -997,6 +1054,18 @@
 
         // Initialize active dot
         setActiveDot(0);
+
+        // Make navbar more visible when scrolled
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(5, 5, 16, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            } else {
+                header.style.background = 'rgba(10, 10, 26, 0.9)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            }
+        });
     </script>
 </body>
 </html>
