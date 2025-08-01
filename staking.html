@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYAZNATION - Stake $NYAZ</title>
+    <title>Staking | NYAZNATION</title>
+    <meta name="description" content="Stake your NYAZ tokens and earn rewards">
     <link rel="icon" href="assets/logo.png">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Solana Wallet Adapter -->
-    <script src="https://unpkg.com/@solana/web3.js@1.44.4/lib/index.iife.js"></script>
-    <script src="https://unpkg.com/@solana/wallet-adapter-base@0.9.19/lib/index.iife.js"></script>
-    <style>
-        /* Loading animation */
-        .staking-loader {
-            display: none;
-            border: 3px solid rgba(20, 241, 149, 0.3);
-            border-radius: 50%;
-            border-top: 3px solid var(--solana-green);
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Top Banner -->
-    <div class="top-banner"></div>
+    <div class="top-banner">
+        <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
+    </div>
+    
+    <!-- Dynamic Banner Carousel -->
+    <div class="banner-carousel">
+        <div class="banner-track">
+            <img src="assets/banner1.png" alt="NYAZ Launch Banner">
+            <img src="assets/banner2.png" alt="NYAZ Staking">
+            <img src="assets/banner3.png" alt="NYAZ NFTs">
+            <img src="assets/banner4.png" alt="NYAZ Community">
+        </div>
+        <div class="banner-controls">
+            <div class="banner-dot active"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+        </div>
+    </div>
     
     <!-- Header -->
     <header>
@@ -41,64 +39,97 @@
                     <img src="assets/logo.png" alt="NYAZ Logo" class="logo-image">
                     <div>
                         <div class="logo-text">NYAZNATION</div>
-                        <div class="slogan">Stake & Earn Rewards</div>
+                        <div class="slogan">Shake It, Meme It. Moon It</div>
                     </div>
                 </div>
                 <div class="nav-links">
                     <a href="index.html">Home</a>
+                    <a href="index.html#tokenomics">Tokenomics</a>
+                    <a href="index.html#roadmap">Roadmap</a>
+                    <a href="staking.html" class="active">Staking</a>
                     <a href="nfts.html">NFTs</a>
                     <a href="contact.html">Contact</a>
-                    <a href="#" class="btn btn-primary" id="buyButton">
+                    <a href="https://pump.fun/nyaz" class="btn btn-primary">
                         <i class="fas fa-coins"></i> Buy $NYAZ
                     </a>
                 </div>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             </nav>
         </div>
     </header>
 
-    <!-- Staking Section -->
-    <section class="section staking-section">
+    <!-- Staking Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h2 class="section-title">Stake $NYAZ</h2>
-            <div class="staking-container">
-                <div class="stake-card">
-                    <h3><i class="fas fa-lock"></i> Stake Your Tokens</h3>
-                    <div class="stake-form">
-                        <input type="number" id="stakeAmount" placeholder="Amount to stake" min="0" step="0.01">
-                        <button class="btn btn-primary" id="stakeButton">
-                            Stake Now
-                        </button>
-                    </div>
-                    <div class="staking-loader" id="stakeLoader"></div>
-                    <p>Current APY: <span class="neon-text">127%</span></p>
-                    <p class="small-text">Minimum stake: 100 $NYAZ</p>
-                </div>
-                
-                <div class="rewards-card">
-                    <h3><i class="fas fa-gift"></i> Your Rewards</h3>
-                    <div class="reward-item">
-                        <span>Pending Rewards:</span>
-                        <span class="neon-text" id="pendingRewards">0 $NYAZ</span>
-                    </div>
-                    <div class="reward-item">
-                        <span>Total Staked:</span>
-                        <span class="neon-text" id="totalStaked">0 $NYAZ</span>
-                    </div>
-                    <button class="btn btn-secondary" id="claimButton">
-                        Claim Rewards
-                    </button>
-                    <div class="staking-loader" id="claimLoader"></div>
+            <div class="hero-content">
+                <h1>Stake <span class="neon-text">$NYAZ</span> Tokens</h1>
+                <p>Earn high yields by staking your NYAZ tokens. Choose from our flexible staking pools.</p>
+                <div class="cta-buttons">
+                    <a href="#calculator" class="btn btn-primary">
+                        <i class="fas fa-calculator"></i> Calculate Rewards
+                    </a>
+                    <a href="#pools" class="btn btn-secondary">
+                        <i class="fas fa-wallet"></i> View Pools
+                    </a>
                 </div>
             </div>
-            
-            <div class="staking-info">
-                <h3><i class="fas fa-info-circle"></i> Staking Information</h3>
-                <ul>
-                    <li>Rewards calculated in real-time</li>
-                    <li>Distributed every 24 hours</li>
-                    <li>Early unstaking penalty: 15%</li>
-                    <li>Compounding rewards available</li>
-                </ul>
+        </div>
+    </section>
+
+    <!-- Staking Calculator -->
+    <section id="calculator" class="section">
+        <div class="container">
+            <h2 class="section-title">Staking <span class="neon-text">Calculator</span></h2>
+            <div class="staking-calculator">
+                <h3 class="calculator-title">Estimate Your Rewards</h3>
+                <form class="calculator-form">
+                    <div class="form-group">
+                        <label for="amount">Amount to Stake ($NYAZ)</label>
+                        <input type="number" id="amount" placeholder="Enter amount" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Staking Duration (Days)</label>
+                        <input type="number" id="duration" placeholder="Enter days" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apy">APY (%)</label>
+                        <input type="number" id="apy" placeholder="Enter APY" min="1" step="0.1" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="calculate-btn">Calculate</button>
+                </form>
+                <div class="calculator-result" id="result">
+                    <p>Enter values to calculate your potential rewards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staking Pools -->
+    <section id="pools" class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2 class="section-title">Staking <span class="neon-text">Pools</span></h2>
+            <div class="staking-pools">
+                <div class="pool-card">
+                    <h3>Basic Pool</h3>
+                    <p>30 Days Lock</p>
+                    <div class="apy">15% APY</div>
+                    <p>Stake your NYAZ for 30 days and earn rewards.</p>
+                    <a href="#" class="btn btn-primary">Stake Now</a>
+                </div>
+                <div class="pool-card">
+                    <h3>Premium Pool</h3>
+                    <p>60 Days Lock</p>
+                    <div class="apy">30% APY</div>
+                    <p>Higher rewards for longer commitment.</p>
+                    <a href="#" class="btn btn-primary">Stake Now</a>
+                </div>
+                <div class="pool-card">
+                    <h3>Deluxe Pool</h3>
+                    <p>90 Days Lock</p>
+                    <div class="apy">50% APY</div>
+                    <p>Maximum rewards for long-term holders.</p>
+                    <a href="#" class="btn btn-primary">Stake Now</a>
+                </div>
             </div>
         </div>
     </section>
@@ -106,20 +137,45 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="logo-text">NYAZNATION</div>
-            <p>Stake $NYAZ - Earn Passive Income</p>
-            <div class="social-links">
-                <a href="https://t.me/NyazNation" class="social-link" target="_blank">
-                    <i class="fab fa-telegram"></i>
-                </a>
-                <a href="https://x.com/nyazcoin" class="social-link" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">NYAZNATION</div>
+                    <p>Shake It, Meme It. Moon It</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#tokenomics">Tokenomics</a>
+                        <a href="index.html#roadmap">Roadmap</a>
+                        <a href="staking.html">Staking</a>
+                        <a href="nfts.html">NFTs</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <div class="footer-links">
+                        <a href="#">Whitepaper</a>
+                        <a href="#">Audit Report</a>
+                        <a href="#">GitHub</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 NYAZNATION. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/staking.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/staking.js"></script>
 </body>
 </html>

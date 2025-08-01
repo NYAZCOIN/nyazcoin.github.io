@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYAZNATION - Contact Us</title>
+    <title>Contact | NYAZNATION</title>
+    <meta name="description" content="Contact NYAZNATION Team">
     <link rel="icon" href="assets/logo.png">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        emailjs.init('hKefppb2L_xMMBbxL'); // Public Key
-    </script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("hKefppb2L_xMMBbxL");
+        })();
+    </script>
 </head>
 <body>
     <!-- Top Banner -->
-    <div class="top-banner"></div>
+    <div class="top-banner">
+        <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
+    </div>
+    
+    <!-- Dynamic Banner Carousel -->
+    <div class="banner-carousel">
+        <div class="banner-track">
+            <img src="assets/banner1.png" alt="NYAZ Launch Banner">
+            <img src="assets/banner2.png" alt="NYAZ Staking">
+            <img src="assets/banner3.png" alt="NYAZ NFTs">
+            <img src="assets/banner4.png" alt="NYAZ Community">
+        </div>
+        <div class="banner-controls">
+            <div class="banner-dot active"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+        </div>
+    </div>
     
     <!-- Header -->
     <header>
@@ -26,75 +45,143 @@
                     <img src="assets/logo.png" alt="NYAZ Logo" class="logo-image">
                     <div>
                         <div class="logo-text">NYAZNATION</div>
-                        <div class="slogan">We'd Love to Hear From You</div>
+                        <div class="slogan">Shake It, Meme It. Moon It</div>
                     </div>
                 </div>
                 <div class="nav-links">
                     <a href="index.html">Home</a>
+                    <a href="index.html#tokenomics">Tokenomics</a>
+                    <a href="index.html#roadmap">Roadmap</a>
                     <a href="staking.html">Staking</a>
                     <a href="nfts.html">NFTs</a>
-                    <a href="#" class="btn btn-primary" id="buyButton">
+                    <a href="contact.html" class="active">Contact</a>
+                    <a href="https://pump.fun/nyaz" class="btn btn-primary">
                         <i class="fas fa-coins"></i> Buy $NYAZ
                     </a>
                 </div>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             </nav>
         </div>
     </header>
 
-    <!-- Contact Section -->
-    <section class="section contact-section">
+    <!-- Contact Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h2 class="section-title">Contact Our Team</h2>
-            <form id="contactForm" class="contact-form" novalidate>
-                <div class="form-group">
-                    <label for="name">Name*</label>
-                    <input type="text" id="name" name="name" required minlength="2">
-                    <div class="error-message" id="nameError"></div>
+            <div class="hero-content">
+                <h1>Contact <span class="neon-text">Us</span></h1>
+                <p>Have questions? Reach out to the NYAZNATION team for support and inquiries.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Send Message
+                    </a>
+                    <a href="#info" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i> Contact Info
+                    </a>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email*</label>
-                    <input type="email" id="email" name="email" required>
-                    <div class="error-message" id="emailError"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Send Us a <span class="neon-text">Message</span></h2>
+            <div class="contact-form">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Enter subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <div class="form-message" id="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section id="info" class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2 class="section-title">Contact <span class="neon-text">Information</span></h2>
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>support@nyazcoin.xyz</p>
                 </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject">
-                        <option value="General Inquiry">General Inquiry</option>
-                        <option value="Partnership">Partnership</option>
-                        <option value="Technical Support">Technical Support</option>
-                    </select>
+                <div class="info-card">
+                    <i class="fab fa-telegram"></i>
+                    <h3>Telegram</h3>
+                    <p>@nyaznation</p>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message*</label>
-                    <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
-                    <div class="error-message" id="messageError"></div>
+                <div class="info-card">
+                    <i class="fab fa-twitter"></i>
+                    <h3>Twitter</h3>
+                    <p>@nyaznation</p>
                 </div>
-                <button type="submit" class="btn btn-primary" id="submitBtn">
-                    <span id="submitText">Send Message</span>
-                    <div class="form-loader" id="formLoader"></div>
-                </button>
-            </form>
-            <div id="formSuccess" class="success-message"></div>
+                <div class="info-card">
+                    <i class="fab fa-discord"></i>
+                    <h3>Discord</h3>
+                    <p>Join our server</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="logo-text">NYAZNATION</div>
-            <p>24/7 Community Support via Telegram</p>
-            <div class="social-links">
-                <a href="https://t.me/NyazNation" class="social-link" target="_blank">
-                    <i class="fab fa-telegram"></i>
-                </a>
-                <a href="mailto:support@nyazcoin.xyz" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">NYAZNATION</div>
+                    <p>Shake It, Meme It. Moon It</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#tokenomics">Tokenomics</a>
+                        <a href="index.html#roadmap">Roadmap</a>
+                        <a href="staking.html">Staking</a>
+                        <a href="nfts.html">NFTs</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <div class="footer-links">
+                        <a href="#">Whitepaper</a>
+                        <a href="#">Audit Report</a>
+                        <a href="#">GitHub</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 NYAZNATION. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/contact.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
