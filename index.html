@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYAZNATION - The Zestiest Meme Coin on Solana</title>
-    <meta name="description" content="Official NYAZ Coin - MEME 💬 FASHION 💮(LIFESTYLE)">
+    <meta name="description" content="Official NYAZ Coin - MEME  FASHION (LIFESTYLE)">
     <link rel="icon" href="assets/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -171,6 +171,10 @@
             font-weight: 500;
             transition: var(--transition);
             position: relative;
+        }
+        
+        .nav-links a.active {
+            color: var(--solana-green);
         }
         
         .nav-links a:not(.btn):hover {
@@ -415,7 +419,7 @@
         }
         
         .roadmap-item ul li:before {
-            content: '✓';
+            content: '';
             position: absolute;
             left: 0;
             color: var(--solana-green);
@@ -676,7 +680,7 @@
 <body>
     <!-- Top Banner -->
     <div class="top-banner">
-        <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
+        <p>MEME  FASHION (LIFESTYLE) | Zest It. Meme It. Moon It</p>
     </div>
     
     <!-- Dynamic Banner Carousel -->
@@ -707,6 +711,7 @@
                     </div>
                 </div>
                 <div class="nav-links">
+                    <a href="#home" class="active">Home</a>
                     <a href="#tokenomics">Tokenomics</a>
                     <a href="#roadmap">Roadmap</a>
                     <a href="staking.html">Staking</a>
@@ -722,11 +727,276 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <h1>Welcome to <span class="neon-text">NYAZNATION</span></h1>
                 <p>The zestiest meme coin on Solana blockchain. Join our community of meme enthusiasts and crypto degens.</p>
                 <div class="cta-buttons">
                     <a href="https://pump.fun/nyaz" class="btn btn-primary">
-                        <i class="fas fa-coin
+                        <i class="fas fa-coins"></i> Buy $NYAZ
+                    </a>
+                    <a href="#tokenomics" class="btn btn-secondary">
+                        <i class="fas fa-chart-pie"></i> Tokenomics
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="section">
+        <div class="container">
+            <h2 class="section-title">NYAZ <span class="neon-text">Tokenomics</span></h2>
+            
+            <div class="tokenomics-grid">
+                <div class="token-card">
+                    <h3>Token Distribution</h3>
+                    <ul class="distribution-list">
+                        <li><span>Presale</span> <span>40%</span></li>
+                        <li><span>Liquidity Pool</span> <span>25%</span></li>
+                        <li><span>Staking Rewards</span> <span>15%</span></li>
+                        <li><span>Marketing & Development</span> <span>10%</span></li>
+                        <li><span>Team</span> <span>5%</span></li>
+                        <li><span>Community Airdrops</span> <span>5%</span></li>
+                    </ul>
+                </div>
+                
+                <div class="token-card">
+                    <h3>Token Details</h3>
+                    <ul class="distribution-list">
+                        <li><span>Token Name</span> <span>NYAZ Coin</span></li>
+                        <li><span>Token Symbol</span> <span>$NYAZ</span></li>
+                        <li><span>Blockchain</span> <span>Solana</span></li>
+                        <li><span>Total Supply</span> <span>1,000,000,000</span></li>
+                        <li><span>Initial Market Cap</span> <span>$100,000</span></li>
+                        <li><span>Contract Address</span> <span>0x...NYAZ</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <img src="assets/tokenomics.png" alt="Tokenomics Chart" class="chart-image">
+                <a href="#" class="chart-btn">
+                    <i class="fas fa-download"></i> Download Full Tokenomics
+                </a>
+            </div>
+            
+            <h3 class="section-title anti-inflation">Anti-Inflation <span class="neon-text">Mechanics</span></h3>
+            
+            <div class="mechanics-grid">
+                <div class="mechanic-card">
+                    <i class="fas fa-fire fa-3x"></i>
+                    <h4>Token Burn</h4>
+                    <p>5% of every transaction is permanently burned, reducing supply over time.</p>
+                </div>
+                
+                <div class="mechanic-card">
+                    <i class="fas fa-piggy-bank fa-3x"></i>
+                    <h4>Staking Rewards</h4>
+                    <p>Earn passive income by staking your $NYAZ tokens in our secure pools.</p>
+                </div>
+                
+                <div class="mechanic-card">
+                    <i class="fas fa-sync-alt fa-3x"></i>
+                    <h4>Buyback System</h4>
+                    <p>Regular buybacks from transaction fees support token price stability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2 class="section-title">NYAZ <span class="neon-text">Roadmap</span></h2>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q3 2025</div>
+                    <h3>Phase 1: Launch & Foundation</h3>
+                    <ul>
+                        <li>Token launch on Solana</li>
+                        <li>Community building</li>
+                        <li>Initial CEX listings</li>
+                        <li>Website & social media launch</li>
+                        <li>First AMA session</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q4 2025</div>
+                    <h3>Phase 2: Growth & Expansion</h3>
+                    <ul>
+                        <li>Staking platform launch</li>
+                        <li>First NFT collection drop</li>
+                        <li>Major exchange listing</li>
+                        <li>Partnership announcements</li>
+                        <li>Community events & contests</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q1 2026</div>
+                    <h3>Phase 3: Ecosystem Development</h3>
+                    <ul>
+                        <li>NYAZ merchandise store</li>
+                        <li>NYAZ debit card partnership</li>
+                        <li>Mobile wallet integration</li>
+                        <li>Charity initiatives launch</li>
+                        <li>DAO governance implementation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Join Our <span class="neon-text">Community</span></h2>
+            
+            <div class="community-links">
+                <a href="https://t.me/nyaznation" class="community-card" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    <h3>Telegram</h3>
+                    <p>Join our active Telegram community for the latest updates</p>
+                </a>
+                
+                <a href="https://twitter.com/nyaznation" class="community-card" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <h3>Twitter</h3>
+                    <p>Follow us for announcements and meme contests</p>
+                </a>
+                
+                <a href="https://discord.gg/nyaznation" class="community-card" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    <h3>Discord</h3>
+                    <p>Chat with the community and team members</p>
+                </a>
+                
+                <a href="https://reddit.com/r/nyaznation" class="community-card" target="_blank">
+                    <i class="fab fa-reddit"></i>
+                    <h3>Reddit</h3>
+                    <p>Join discussions and share your memes</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">NYAZNATION</div>
+                    <p>Shake It, Meme It. Moon It</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="#tokenomics">Tokenomics</a>
+                        <a href="#roadmap">Roadmap</a>
+                        <a href="staking.html">Staking</a>
+                        <a href="nfts.html">NFTs</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <div class="footer-links">
+                        <a href="#">Whitepaper</a>
+                        <a href="#">Audit Report</a>
+                        <a href="#">GitHub</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 NYAZNATION. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active link
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Banner Carousel Controls
+        const dots = document.querySelectorAll('.banner-dot');
+        const track = document.querySelector('.banner-track');
+        const images = document.querySelectorAll('.banner-track img');
+        const totalImages = images.length;
+        let currentIndex = 0;
+
+        // Set active dot
+        function setActiveDot(index) {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        // Manual dot control
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                setActiveDot(currentIndex);
+            });
+        });
+
+        // Auto slide
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalImages;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            setActiveDot(currentIndex);
+        }, 5000);
+
+        // Initialize active dot
+        setActiveDot(0);
+    </script>
+</body>
+</html>
