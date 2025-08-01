@@ -4,16 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYAZNATION - The Zestiest Meme Coin on Solana</title>
+    <meta name="description" content="Official NYAZNATION launch September 25, 2025 - Stake, trade NFTs, and join the zest revolution!">
+    
+    <!-- ===== META TAGS ===== -->
+    <meta name="launch-date" content="2025-09-25T00:00:00">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://unpkg.com; connect-src 'self' https://api.emailjs.com">
+    <meta property="og:image" content="https://nyazcoin.xyz/assets/social-preview.png">
+    
+    <!-- ===== ASSETS ===== -->
     <link rel="icon" href="assets/logo.png">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- ===== WEB3 ===== -->
+    <script src="https://unpkg.com/@solana/web3.js@1.44.4/lib/index.iife.js"></script>
+    <script src="https://unpkg.com/@solana/wallet-adapter-base@0.9.19/lib/index.iife.js"></script>
 </head>
 <body>
-    <!-- Top Banner -->
-    <div class="top-banner" style="background-image: url('assets/banner.png');"></div>
+    <!-- ===== BANNER CAROUSEL ===== -->
+    <div class="banner-carousel">
+        <div class="banner-track">
+            <img src="assets/banner1.png" alt="NYAZ Launch Banner" loading="lazy">
+            <img src="assets/banner2.png" alt="NYAZ Staking" loading="lazy">
+            <img src="assets/banner3.png" alt="NYAZ NFTs" loading="lazy">
+            <img src="assets/banner4.png" alt="NYAZ Community" loading="lazy">
+        </div>
+    </div>
     
-    <!-- Header -->
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="container">
             <nav>
@@ -21,219 +39,155 @@
                     <img src="assets/logo.png" alt="NYAZ Logo" class="logo-image">
                     <div>
                         <div class="logo-text">NYAZNATION</div>
-                        <div class="slogan">Shake It, Meme It. Moon It</div>
+                        <div class="slogan">Mint Starts: Sept 25, 2025</div>
                     </div>
                 </div>
                 <div class="nav-links">
                     <a href="#tokenomics">Tokenomics</a>
                     <a href="#roadmap">Roadmap</a>
                     <a href="#community">Community</a>
-                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_TOKEN_ADDRESS" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-coins"></i> Buy $NYAZ
+                    <a href="nfts.html">NFTs</a>
+                    <a href="staking.html">Staking</a>
+                    <a href="#" class="btn btn-primary" id="buyButton">
+                        <i class="fas fa-coins"></i> Join Allowlist
                     </a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Welcome to <span class="neon-text">NYAZNATION</span></h1>
-                <p>The zestiest meme coin on Solana blockchain. Join our community of meme enthusiasts and crypto degens.</p>
+            <div class="hero-content floating">
+                <h1>Zesty <span class="neon-text">Meme Revolution</span> Begins</h1>
+                <p>Official $NYAZ minting starts September 25, 2025 on Pump.fun</p>
+                
+                <div class="countdown-container">
+                    <h3>Mint Countdown</h3>
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <div>Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <div>Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <div>Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <div>Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="cta-buttons">
-                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_TOKEN_ADDRESS" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-coins"></i> Buy $NYAZ
+                    <a href="#" class="btn btn-primary" id="heroBuyButton">
+                        <i class="fas fa-coins"></i> Join Allowlist
                     </a>
-                    <a href="https://t.me/NyazNation" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-telegram"></i> Join Telegram
-                    </a>
-                    <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk" class="btn btn-whitepaper" target="_blank">
-                        <i class="fas fa-file-alt"></i> Whitepaper v2.0
+                    <a href="https://t.me/NyazNation" class="btn btn-secondary">
+                        <i class="fab fa-telegram"></i> Early Access
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tokenomics Section -->
-    <section id="tokenomics" class="section">
-        <div class="container">
-            <h2 class="section-title">Tokenomics</h2>
-            <div class="tokenomics-grid">
-                <div class="token-card">
-                    <h3>Token Details</h3>
-                    <ul class="distribution-list">
-                        <li><span>Total Supply:</span> <span class="neon-text">1,000,000,000 $NYAZ</span></li>
-                        <li><span>Chain:</span> <span class="purple-text">Solana</span></li>
-                        <li><span>Launch Platform:</span> <span class="neon-text">Pump.fun</span></li>
-                        <li><span>Liquidity:</span> <span class="neon-text">Permanently Locked</span></li>
-                    </ul>
-                </div>
-                <div class="token-card">
-                    <h3>Distribution Breakdown</h3>
-                    <ul class="distribution-list">
-                        <li><span>Public Sale:</span> <span>50%</span></li>
-                        <li><span>Airdrops & Campaigns:</span> <span>15%</span></li>
-                        <li><span>Team (6-month vesting):</span> <span>10%</span></li>
-                        <li><span>Promotions & Partnerships:</span> <span>10%</span></li>
-                        <li><span>Utility & Staking:</span> <span>15%</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="chart-container">
-                <img src="assets/tokenomics.png" alt="Tokenomics Chart" class="chart-image">
-                <a href="assets/tokenomics.png" target="_blank" class="chart-btn">
-                    <i class="fas fa-expand"></i> View Full Tokenomics
-                </a>
-            </div>
-            
-            <h2 class="section-title" style="margin-top: 80px;">🔥 Anti-Inflation Mechanics</h2>
-            <div class="mechanics-grid">
-                <div class="mechanic-card">
-                    <h4><i class="fas fa-fire"></i> 3% Transaction Tax</h4>
-                    <p>Enabled post-DEX if DAO Votes yes</p>
-                </div>
-                <div class="mechanic-card">
-                    <h4><i class="fas fa-fire"></i> 1.5% Burned</h4>
-                    <p>Deflationary mechanism to reduce supply</p>
-                </div>
-                <div class="mechanic-card">
-                    <h4><i class="fas fa-piggy-bank"></i> 1.5% Staking Pool</h4>
-                    <p>Reward holders with passive income</p>
-                </div>
-                <div class="mechanic-card">
-                    <h4><i class="fas fa-sync-alt"></i> Buybacks</h4>
-                    <p>From NFT fees and merch revenue</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap Section -->
+    <!-- ===== ROADMAP SECTION ===== -->
     <section id="roadmap" class="section">
         <div class="container">
-            <h2 class="section-title">Roadmap</h2>
-            <div class="roadmap-container">
+            <h2 class="section-title">Roadmap to Zestification</h2>
+            <div class="roadmap-timeline">
+                <!-- Phase 1 -->
                 <div class="roadmap-item">
+                    <div class="roadmap-date">Aug-Sep 2025</div>
                     <div class="roadmap-content">
-                        <h3>Phase 1 - Meme Awakening</h3>
-                        <p>Token launch, mascot reveal, meme contests, socials, Discord, tipping bot preview</p>
+                        <h3>Phase 1: Genesis Mint</h3>
+                        <ul>
+                            <li>Pump.fun Fair Launch (Sept 25)</li>
+                            <li>10,000+ Holder Target</li>
+                            <li>DEX Listings (Raydium/Orca)</li>
+                        </ul>
                     </div>
                 </div>
+                
+                <!-- Phase 2 -->
                 <div class="roadmap-item">
+                    <div class="roadmap-date">Oct-Nov 2025</div>
                     <div class="roadmap-content">
-                        <h3>Phase 2 - Streetwear Vibes</h3>
-                        <p>DEX listing, NFT badge concept, meme wars, giveaways, merch preview</p>
+                        <h3>Phase 2: Ecosystem Build</h3>
+                        <ul>
+                            <li>Staking Platform v1 Launch</li>
+                            <li>"Zesty Cats" NFT Collection</li>
+                            <li>First CEX Listing</li>
+                        </ul>
                     </div>
                 </div>
+                
+                <!-- Phase 3 -->
                 <div class="roadmap-item">
+                    <div class="roadmap-date">Dec 2025-Jan 2026</div>
                     <div class="roadmap-content">
-                        <h3>Phase 3 - Real Utility</h3>
-                        <p>Launch NYAZBazaar (NFT mini-marketplace), airdrops, DAO voting, NFT minting, staking preview</p>
+                        <h3>Phase 3: Expansion</h3>
+                        <ul>
+                            <li>NYAZ Merch Store Launch</li>
+                            <li>Partner Brand Collabs</li>
+                            <li>100M Market Cap Target</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="roadmap-item">
-                    <div class="roadmap-content">
-                        <h3>Phase 4 - Culture Expansion</h3>
-                        <p>CEX listing prep, brand collabs, staking live, DAO activation</p>
-                    </div>
-                </div>
-                <div class="roadmap-item">
-                    <div class="roadmap-content">
-                        <h3>Phase 5 - The Zest Revolution</h3>
-                        <p>Surprise drops, Zestify App, ZestTags NFTs, FASHFIl pilot, global campaigns</p>
-                    </div>
-                </div>
-            </div>
-            <div class="chart-container">
-                <img src="assets/roadmap.png" alt="Roadmap Chart" class="chart-image">
-                <a href="assets/roadmap.png" target="_blank" class="chart-btn">
-                    <i class="fas fa-expand"></i> View Full Roadmap
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Links Section -->
-    <section class="community-links">
-        <h2>Join Our Community</h2>
-        <div class="community-buttons-container">
-            <div class="community-buttons-wrapper">
-                <div class="community-buttons">
-                    <a href="https://www.youtube.com/@nyaznation" class="community-btn youtube-nyaz" target="_blank">NYAZ YouTube</a>
-                    <a href="https://www.tiktok.com/@nyazcoin" class="community-btn tiktok" target="_blank">TikTok</a>
-                    <a href="https://www.facebook.com/nyazcoin" class="community-btn facebook-page" target="_blank">Facebook Page</a>
-                    <a href="https://facebook.com/groups/nyaznation" class="community-btn facebook-group" target="_blank">Facebook Group</a>
-                </div>
-                <div class="community-buttons">
-                    <a href="https://www.youtube.com/@nyaznation" class="community-btn youtube-nyaz" target="_blank">NYAZ YouTube</a>
-                    <a href="https://www.tiktok.com/@nyazcoin" class="community-btn tiktok" target="_blank">TikTok</a>
-                    <a href="https://www.facebook.com/nyazcoin" class="community-btn facebook-page" target="_blank">Facebook Page</a>
-                    <a href="https://facebook.com/groups/nyaznation" class="community-btn facebook-group" target="_blank">Facebook Group</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Community Section -->
-    <section id="community" class="section">
+    <!-- ===== TOKENOMICS SECTION ===== -->
+    <section id="tokenomics" class="section">
         <div class="container">
-            <h2 class="section-title">Join the Zest</h2>
-            <div style="text-align: center; margin: 50px 0;">
-                <p style="font-size: 1.2rem; margin-bottom: 30px;">Be part of the spiciest community in Web3. Connect with fellow NYAZians!</p>
-                <div class="cta-buttons" style="justify-content: center;">
-                    <a href="https://t.me/NyazNation" class="btn btn-primary" target="_blank">
-                        <i class="fab fa-telegram"></i> Join Telegram
-                    </a>
-                    <a href="https://t.me/NyazNationchat" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-comments"></i> Telegram Chat
-                    </a>
+            <h2 class="section-title">Zesty Economics</h2>
+            <div class="tokenomics-grid">
+                <div class="token-card">
+                    <h3><i class="fas fa-coins"></i> Token Details</h3>
+                    <ul class="distribution-list">
+                        <li><span>Total Supply:</span> <span class="neon-text">1B $NYAZ</span></li>
+                        <li><span>Mint Date:</span> <span class="neon-text">Sept 25, 2025</span></li>
+                        <li><span>Initial MCap:</span> <span class="neon-text">$500K</span></li>
+                    </ul>
                 </div>
-                <div class="cta-buttons" style="justify-content: center; margin-top: 15px;">
-                    <a href="https://x.com/nyazcoin" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-twitter"></i> Follow on Twitter
-                    </a>
-                    <a href="https://x.com/LifePopx" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-bullhorn"></i> Marketing Twitter
-                    </a>
-                </div>
-                <div class="cta-buttons" style="justify-content: center; margin-top: 15px;">
-                    <a href="https://github.com/nyazcoin" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                    <a href="https://instagram.com/nyazcoin" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-instagram"></i> Follow on Instagram
-                    </a>
+                <div class="token-card">
+                    <h3><i class="fas fa-chart-pie"></i> Distribution</h3>
+                    <ul class="distribution-list">
+                        <li><span>Public Sale:</span> <span>50%</span></li>
+                        <li><span>Staking Rewards:</span> <span>20%</span></li>
+                        <li><span>Team (Vested):</span> <span>10%</span></li>
+                        <li><span>Ecosystem:</span> <span>20%</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
-            <div class="logo-text" style="font-size: 2.5rem; margin-bottom: 20px;">NYAZNATION</div>
-            <p>$NYAZCOIN - The Zestiest Meme Coin on Solana - $NYAZ</p>
-            <p>Shake It, Meme It. Moon It</p>
-            <div class="social-links">
-                <a href="https://t.me/NyazNation" class="social-link" target="_blank">
-                    <i class="fab fa-telegram"></i>
-                </a>
-                <a href="https://x.com/nyazcoin" class="social-link" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://instagram.com/nyazcoin" class="social-link" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://github.com/nyazcoin" class="social-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
+            <div class="footer-content">
+                <div class="logo-text">NYAZNATION</div>
+                <p>Minting starts September 25, 2025</p>
+                <div class="social-links">
+                    <a href="https://t.me/NyazNation" class="social-link" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://x.com/nyazcoin" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
-                  </html>
+</html>

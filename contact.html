@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYAZNATION - Contact Us</title>
+    <link rel="icon" href="assets/logo.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init('hKefppb2L_xMMBbxL'); // Public Key
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="assets/logo.png" alt="NYAZ Logo" class="logo-image">
+                    <div>
+                        <div class="logo-text">NYAZNATION</div>
+                        <div class="slogan">We'd Love to Hear From You</div>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="staking.html">Staking</a>
+                    <a href="nfts.html">NFTs</a>
+                    <a href="#" class="btn btn-primary" id="buyButton">
+                        <i class="fas fa-coins"></i> Buy $NYAZ
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Our Team</h2>
+            <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Name*</label>
+                    <input type="text" id="name" name="name" required minlength="2">
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject">
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Technical Support">Technical Support</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message*</label>
+                    <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+                    <div class="error-message" id="messageError"></div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <span id="submitText">Send Message</span>
+                    <div class="form-loader" id="formLoader"></div>
+                </button>
+            </form>
+            <div id="formSuccess" class="success-message"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo-text">NYAZNATION</div>
+            <p>24/7 Community Support via Telegram</p>
+            <div class="social-links">
+                <a href="https://t.me/NyazNation" class="social-link" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="mailto:support@nyazcoin.xyz" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
