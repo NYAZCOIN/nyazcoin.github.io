@@ -1,104 +1,44 @@
-// NFT Rarity Validation
-const VALID_RARITIES = new Set(['common', 'rare', 'legendary', 'exclusive']);
-
-// Sample NFT Data
-const nfts = [
-    { 
-        id: 1, 
-        name: "Zesty Cat", 
-        rarity: "rare", 
-        image: "assets/nft1.png",
-        price: 0.25 
-    },
-    { 
-        id: 2, 
-        name: "Moon Nyaz", 
-        rarity: "legendary", 
-        image: "assets/nft2.png",
-        price: 0.5 
-    },
-    { 
-        id: 3, 
-        name: "Cyber Nyaz", 
-        rarity: "exclusive", 
-        image: "assets/nft3.png",
-        price: 1 
-    }
-];
-
-// Render NFTs with Error Handling
-function renderNFTs(filter = "all") {
-    const grid = document.querySelector('.nft-grid');
+// NFT Gallery Modal
+document.addEventListener('DOMContentLoaded', () => {
+    const nftCards = document.querySelectorAll('.nft-card');
     
-    try {
-        grid.innerHTML = '';
-        
-        const filteredNFTs = filter === 'all' ? nfts : nfts.filter(nft => {
-            if (!VALID_RARITIES.has(nft.rarity)) {
-                console.warn(`Invalid rarity for NFT ${nft.id}: ${nft.rarity}`);
-                return false;
-            }
-            return nft.rarity === filter;
-        });
-
-        filteredNFTs.forEach(nft => {
-            grid.innerHTML += `
-                <div class="nft-card" data-rarity="${nft.rarity}">
-                    <div class="nft-image">
-                        <img src="${nft.image}" alt="${nft.name}" loading="lazy" decoding="async">
-                        <div class="nft-overlay">
-                            <button class="btn btn-primary" onclick="handleNftPurchase(${nft.id})">
-                                Buy Now
-                            </button>
-                        </div>
-                    </div>
-                    <h3>${nft.name}</h3>
-                    <div class="nft-meta">
-                        <span class="rarity ${nft.rarity}">${nft.rarity}</span>
-                        <span class="price">◎ ${nft.price.toLocaleString('en-US')}</span>
-                    </div>
+    nftCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const title = card.querySelector('h3').textContent;
+            const description = card.querySelector('p').textContent;
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.classList.add('nft-modal');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: var(--dark-bg); border-radius: 15px; padding: 30px; max-width: 500px; width: 90%; text-align: center;">
+                    <img src="${card.querySelector('img').src}" alt="${title}" style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+                    <h3 style="color: var(--solana-green); margin-bottom: 10px;">${title}</h3>
+                    <p style="margin-bottom: 20px;">${description}</p>
+                    <button class="btn btn-primary" id="close-modal">Close</button>
+                    <button class="btn btn-secondary" style="margin-top: 10px;">Mint NFT</button>
                 </div>
             `;
+            
+            document.body.appendChild(modal);
+            
+            // Close modal
+            document.getElementById('close-modal').addEventListener('click', () => {
+                modal.remove();
+            });
         });
-
-    } catch (error) {
-        console.error('NFT Render Error:', error);
-        grid.innerHTML = `
-            <div class="error-card">
-                <i class="fas fa-exclamation-triangle"></i>
-                <p>Failed to load NFTs. Please refresh.</p>
-            </div>
-        `;
-    }
-}
-
-// Initialize Filters
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderNFTs(btn.textContent.toLowerCase());
     });
 });
-
-// Web3 Purchase Handler
-async function handleNftPurchase(nftId) {
-    try {
-        const provider = window.phantom?.solana || window.solflare;
-        if (!provider) throw new Error('Please install Phantom or Solflare wallet!');
-        
-        await provider.connect();
-        const publicKey = provider.publicKey.toString();
-        
-        // Replace with actual program call
-        const txHash = `mock-tx-${nftId}-${Date.now()}`; 
-        console.log('NFT Purchased! TX:', txHash);
-        alert(`NFT #${nftId} purchased successfully!\nTX: ${txHash.slice(0, 10)}...`);
-    } catch (error) {
-        console.error('Purchase Failed:', error);
-        alert('Error: ' + error.message);
-    }
-}
-
-// Initial Load
-document.addEventListener('DOMContentLoaded', renderNFTs);
