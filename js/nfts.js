@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', () => {
             const title = card.querySelector('h3').textContent;
             const description = card.querySelector('p').textContent;
+            const imageSrc = card.querySelector('img').src;
             
             // Create modal
             const modal = document.createElement('div');
@@ -24,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             
             modal.innerHTML = `
-                <div style="background: var(--dark-bg); border-radius: 15px; padding: 30px; max-width: 500px; width: 90%; text-align: center;">
-                    <img src="${card.querySelector('img').src}" alt="${title}" style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h3 style="color: var(--solana-green); margin-bottom: 10px;">${title}</h3>
+                <div style="background: #0a0a1a; border: 1px solid rgba(153, 69, 255, 0.3); border-radius: 15px; padding: 30px; max-width: 500px; width: 90%; text-align: center;">
+                    <img src="${imageSrc}" alt="${title}" style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+                    <h3 style="color: #14F195; margin-bottom: 10px;">${title}</h3>
                     <p style="margin-bottom: 20px;">${description}</p>
                     <button class="btn btn-primary" id="close-modal">Close</button>
                     <button class="btn btn-secondary" style="margin-top: 10px;">Mint NFT</button>
