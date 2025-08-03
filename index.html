@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .countdown-title-container {
+        .live-time-container {
             overflow: hidden;
             position: relative;
             height: 40px;
             margin-bottom: 20px;
         }
         
-        .scrolling-title {
+        .live-time-title {
             position: absolute;
             white-space: nowrap;
             animation: scrollTitle 20s linear infinite;
@@ -24,6 +24,8 @@
             text-shadow: 0 0 10px #14F195, 0 0 20px #14F195;
             font-size: 1.8rem;
             font-weight: bold;
+            width: 100%;
+            text-align: center;
         }
         
         @keyframes scrollTitle {
@@ -77,6 +79,30 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
+        
+        /* New styles for live clock */
+        .live-clock-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px 0;
+        }
+        
+        .live-time {
+            font-size: 3.5rem;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            text-shadow: 0 0 10px #14F195, 0 0 20px #14F195;
+            margin-bottom: 10px;
+        }
+        
+        .live-date {
+            font-size: 1.8rem;
+            color: #ddd;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -118,29 +144,15 @@
         </div>
     </header>
 
-    <!-- Countdown Timer -->
+    <!-- Live Clock Display -->
     <div class="countdown-section">
         <div class="light-trail"></div>
-        <div class="countdown-title-container">
-            <div class="scrolling-title" id="countdown-title">PRESALE STARTS IN</div>
+        <div class="live-time-container">
+            <div class="live-time-title">LIVE TIME</div>
         </div>
-        <div class="countdown-timer">
-            <div class="countdown-unit">
-                <span id="days">00</span>
-                <span class="countdown-label">Days</span>
-            </div>
-            <div class="countdown-unit">
-                <span id="hours">00</span>
-                <span class="countdown-label">Hours</span>
-            </div>
-            <div class="countdown-unit">
-                <span id="minutes">00</span>
-                <span class="countdown-label">Minutes</span>
-            </div>
-            <div class="countdown-unit">
-                <span id="seconds">00</span>
-                <span class="countdown-label">Seconds</span>
-            </div>
+        <div class="live-clock-display">
+            <div id="live-time" class="live-time">00:00:00</div>
+            <div id="live-date" class="live-date">Monday, January 1, 2025</div>
         </div>
     </div>
 
@@ -390,5 +402,36 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Function to update live time display
+        function updateLiveTime() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            // Get time components
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            // Convert to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            seconds = seconds < 10 ? '0'+seconds : seconds;
+            
+            // Format date
+            const dateStr = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            
+            // Update DOM elements
+            document.getElementById('live-time').textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+            document.getElementById('live-date').textContent = dateStr;
+        }
+        
+        // Update immediately and then every second
+        updateLiveTime();
+        setInterval(updateLiveTime, 1000);
+    </script>
 </body>
-                        </html>
+                    </html>
