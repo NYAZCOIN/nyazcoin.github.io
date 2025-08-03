@@ -7,734 +7,16 @@
     <meta name="description" content="Official NYAZ Coin - MEME 💬 FASHION 💮(LIFESTYLE)">
     <link rel="icon" href="assets/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* ===== BASE STYLES ===== */
-        :root {
-            --solana-purple: #9945FF;
-            --solana-green: #14F195;
-            --dark-bg: #0a0a1a;
-            --darker-bg: #050510;
-            --card-bg: rgba(153, 69, 255, 0.1);
-            --neon-glow: 0 0 10px #14F195, 0 0 20px #14F195;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #fff;
-            background: var(--dark-bg);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--solana-green);
-            text-shadow: var(--neon-glow);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: var(--transition);
-            text-align: center;
-            font-size: 1.1rem;
-            margin: 5px;
-        }
-        
-        .btn-primary {
-            background: var(--solana-purple);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(153, 69, 255, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background: #7a36cc;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(153, 69, 255, 0.6);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: #fff;
-            border: 2px solid var(--solana-green);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(20, 241, 149, 0.1);
-            transform: translateY(-3px);
-        }
-        
-        .btn-whitepaper {
-            background: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-        
-        .btn-whitepaper:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-        
-        .neon-text {
-            color: var(--solana-green);
-            text-shadow: var(--neon-glow);
-        }
-        
-        .purple-text {
-            color: var(--solana-purple);
-        }
-        
-        /* ===== TOP BANNER ===== */
-        .top-banner {
-            background: var(--darker-bg);
-            text-align: center;
-            padding: 10px 0;
-            font-size: 1.1rem;
-            border-bottom: 1px solid rgba(153, 69, 255, 0.3);
-        }
-        
-        .top-banner p {
-            color: var(--solana-green);
-        }
-        
-        /* ===== HEADER ===== */
-        header {
-            background: rgba(10, 10, 26, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 15px 0;
-            transition: var(--transition);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-image {
-            width: 50px;
-            height: 50px;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--solana-purple);
-        }
-        
-        .slogan {
-            font-size: 0.9rem;
-            color: var(--solana-green);
-        }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .nav-links a.active {
-            color: var(--solana-green);
-        }
-        
-        .nav-links a:not(.btn):hover {
-            color: var(--solana-green);
-        }
-        
-        .nav-links a:not(.btn):after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--solana-green);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:not(.btn):hover:after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* ===== HERO SECTION ===== */
-        .hero {
-            padding: 180px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(153, 69, 255, 0.1) 0%, rgba(10, 10, 26, 0) 70%);
-            z-index: -1;
-        }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #ddd;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        /* ===== TOKENOMICS SECTION ===== */
-        .tokenomics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .token-card {
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid rgba(153, 69, 255, 0.3);
-            border-radius: 15px;
-            padding: 30px;
-            backdrop-filter: blur(5px);
-            transition: var(--transition);
-        }
-        
-        .token-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .token-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--solana-green);
-        }
-        
-        .distribution-list {
-            list-style: none;
-        }
-        
-        .distribution-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .distribution-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .distribution-list li span:first-child {
-            font-weight: 500;
-        }
-        
-        .chart-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-        
-        .chart-image {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
-        }
-        
-        .chart-btn {
-            display: inline-block;
-            margin-top: 20px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        .chart-btn:hover {
-            color: var(--solana-green);
-        }
-        
-        .chart-btn i {
-            margin-right: 8px;
-        }
-        
-        .whitepaper-bar {
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid rgba(153, 69, 255, 0.3);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 30px auto;
-            max-width: 800px;
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .whitepaper-bar:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .whitepaper-bar h3 {
-            color: var(--solana-green);
-            margin-bottom: 15px;
-        }
-        
-        .anti-inflation {
-            margin-top: 80px !important;
-            margin-bottom: 30px !important;
-        }
-        
-        .mechanics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .mechanic-card {
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid rgba(153, 69, 255, 0.3);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .mechanic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .mechanic-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--solana-green);
-        }
-        
-        .mechanic-card p {
-            color: #ddd;
-        }
-        
-        .fa-fire {
-            color: var(--solana-green);
-        }
-        
-        .fa-piggy-bank, .fa-sync-alt {
-            color: var(--solana-purple);
-        }
-        
-        /* ===== ROADMAP SECTION ===== */
-        <!-- Roadmap Section -->
-<section id="roadmap" class="section" style="background: var(--darker-bg);">
-    <div class="container">
-        <h2 class="section-title">NYAZ <span class="neon-text">Roadmap</span></h2>
-        
-        <div class="roadmap-container">
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Q3 2025</div>
-                <h3>Phase 1: Launch & Foundation</h3>
-                <ul>
-                    <li>Token launch on Solana <span class="completed-badge">Completed</span></li>
-                    <li>Community building <span class="completed-badge">Completed</span></li>
-                    <li>Website & social media launch <span class="completed-badge">Completed</span></li>
-                    <li>First AMA session</li>
-                </ul>
-            </div>
-            
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Q4 2025</div>
-                <h3>Phase 2: NFTs, Roles & Creator Rewards</h3>
-                <ul>
-                    <li>First NFT collection drop</li>
-                    <li>NFT badges for OGs, Whales & Creators</li>
-                    <li>Creator reward system</li>
-                    <li>Partnership announcements</li>
-                    <li>Community events & contests</li>
-                </ul>
-            </div>
-            
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Q1-Q2 2026</div>
-                <h3>Phase 3: Merch, Staking & NYAZFI</h3>
-                <ul>
-                    <li>NYAZ Merch Store</li>
-                    <li>Staking via NYAZFI</li>
-                    <li>Staking badge NFTs</li>
-                    <li>QR Code-linked Merch Tracking</li>
-                    <li>Meme Staking Rewards & Burn Models</li>
-                </ul>
-            </div>
-
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Q3-Q4 2026</div>
-                <h3>Phase 4: Meme Marketplace & Expansion</h3>
-                <ul>
-                    <li>Launch Meme Marketplace</li>
-                    <li>Create, list, trade memes</li>
-                    <li>Integrate meme tipping and NFT flexing</li>
-                    <li>Partnerships with Solana memes & Fashion Brands</li>
-                    <li>CEX Listing & DAO Prep begins</li>
-                </ul>
-            </div>
-
-            <div class="roadmap-item">
-                <div class="roadmap-phase">Q1-Q2 2027</div>
-                <h3>Phase 5: DAO Events & Global Drops</h3>
-                <ul>
-                    <li>NYAZ DAO Voting system</li>
-                    <li>IRL Fashion Drops & Artistes Collabs</li>
-                    <li>ZestFeed blogs & Global Fashion Events</li>
-                    <li>NFT-bookings & Ad Spots</li>
-                    <li>NYAZIFY App prototype</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-    
-        
-        
-        /* ===== COMMUNITY SECTION ===== */
-        .community-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .community-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid rgba(153, 69, 255, 0.3);
-            border-radius: 15px;
-            padding: 40px 20px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            transition: var(--transition);
-        }
-        
-        .community-card:hover {
-            transform: translateY(-10px);
-            background: rgba(153, 69, 255, 0.1);
-        }
-        
-        .community-card i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--solana-green);
-        }
-        
-        .community-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        
-        .community-card p {
-            color: #ddd;
-        }
-        
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--darker-bg);
-            padding: 50px 0 30px;
-            text-align: center;
-            border-top: 1px solid rgba(153, 69, 255, 0.3);
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            text-align: left;
-        }
-        
-        .footer-brand {
-            text-align: center;
-        }
-        
-        .logo-text {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--card-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            border: 1px solid rgba(153, 69, 255, 0.3);
-            text-decoration: none;
-            color: white;
-            font-size: 1.2rem;
-        }
-        
-        .social-link:hover {
-            background: var(--solana-purple);
-            transform: translateY(-5px);
-            box-shadow: var(--neon-glow);
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: var(--solana-green);
-            transform: translateX(5px);
-        }
-        
-        .copyright {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        
-        /* ===== DYNAMIC BANNER ===== */
-        .banner-carousel {
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .banner-track {
-            display: flex;
-            height: 100%;
-            animation: slide 30s infinite linear;
-        }
-        
-        .banner-track img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            20% { transform: translateX(0); }
-            25% { transform: translateX(-100%); }
-            45% { transform: translateX(-100%); }
-            50% { transform: translateX(-200%); }
-            70% { transform: translateX(-200%); }
-            75% { transform: translateX(-300%); }
-            95% { transform: translateX(-300%); }
-            100% { transform: translateX(-400%); }
-        }
-        
-        .banner-controls {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-        
-        .banner-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .banner-dot.active {
-            background: var(--solana-green);
-            transform: scale(1.2);
-        }
-        
-        /* ===== MOBILE RESPONSIVENESS ===== */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .banner-carousel {
-                height: 300px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                right: -100%;
-                flex-direction: column;
-                background: var(--darker-bg);
-                width: 70%;
-                height: calc(100vh - 80px);
-                padding: 30px;
-                transition: var(--transition);
-                gap: 20px;
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero {
-                padding-top: 150px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .banner-carousel {
-                height: 250px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .banner-carousel {
-                height: 200px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Top Banner -->
     <div class="top-banner">
         <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
-    </div>
-    
-    <!-- Dynamic Banner Carousel -->
-    <div class="banner-carousel">
-        <div class="banner-track">
-            <img src="assets/banner1.png" alt="NYAZ Launch Banner">
-            <img src="assets/banner2.png" alt="NYAZ Staking">
-            <img src="assets/banner3.png" alt="NYAZ NFTs">
-            <img src="assets/banner4.png" alt="NYAZ Community">
-        </div>
-        <div class="banner-controls">
-            <div class="banner-dot active"></div>
-            <div class="banner-dot"></div>
-            <div class="banner-dot"></div>
-            <div class="banner-dot"></div>
+        <div id="digital-timer">
+            <span id="current-day"></span>, 
+            <span id="current-date"></span> | 
+            <span id="current-time"></span>
         </div>
     </div>
     
@@ -756,7 +38,7 @@
                     <a href="staking.html">Staking</a>
                     <a href="nfts.html">NFTs</a>
                     <a href="contact.html">Contact</a>
-                    <a href="https://pump.fun/nyaz" class="btn btn-primary">
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_RAYDIUM_CONTRACT" class="btn btn-primary">
                         <i class="fas fa-coins"></i> Buy $NYAZ
                     </a>
                 </div>
@@ -765,6 +47,22 @@
         </div>
     </header>
 
+    <!-- Dynamic Banner Carousel -->
+    <div class="banner-carousel">
+        <div class="banner-track">
+            <img src="assets/banner1.png" alt="NYAZ Launch Banner">
+            <img src="assets/banner2.png" alt="NYAZ Staking">
+            <img src="assets/banner3.png" alt="NYAZ NFTs">
+            <img src="assets/banner4.png" alt="NYAZ Community">
+        </div>
+        <div class="banner-controls">
+            <div class="banner-dot active"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -772,7 +70,7 @@
                 <h1>Welcome to <span class="neon-text">NYAZNATION</span></h1>
                 <p>The zestiest meme coin on Solana blockchain. Join our community of meme enthusiasts and crypto degens.</p>
                 <div class="cta-buttons">
-                    <a href="https://pump.fun/nyaz" class="btn btn-primary">
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_RAYDIUM_CONTRACT" class="btn btn-primary">
                         <i class="fas fa-coins"></i> Buy $NYAZ
                     </a>
                     <a href="#tokenomics" class="btn btn-secondary">
@@ -792,7 +90,8 @@
                 <div class="token-card">
                     <h3>Token Distribution</h3>
                     <ul class="distribution-list">
-                        <li><span>Public Sales (Pump.fun)</span> <span>50%</span></li>
+                        <li><span>Presale (5%)</span> <span>5%</span></li>
+                        <li><span>Public Sales (Raydium)</span> <span>45%</span></li>
                         <li><span>Airdrops & Contests</span> <span>15%</span></li>
                         <li><span>Apps, Staking & Integration</span> <span>15%</span></li>
                         <li><span>Marketing & Collaboration</span> <span>10%</span></li>
@@ -861,9 +160,9 @@
                     <div class="roadmap-phase">Q3 2025</div>
                     <h3>Phase 1: Launch & Foundation</h3>
                     <ul>
-                        <li>Token launch on Solana</li>
-                        <li>Community building</li>
-                        <li>Website & social media launch</li>
+                        <li>Token launch on Solana <span class="completed-badge">Completed</span></li>
+                        <li>Community building <span class="completed-badge">Completed</span></li>
+                        <li>Website & social media launch <span class="completed-badge">Completed</span></li>
                         <li>First AMA session</li>
                     </ul>
                 </div>
@@ -988,7 +287,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 NYAZNATION. All rights reserved.</p>
+                <p>&copy; 2025 NYAZNATION. All rights reserved. | Visitors: <span id="visitor-count">0</span></p>
             </div>
         </div>
     </footer>
@@ -1077,6 +376,48 @@
                 header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
             }
         });
+        
+        // Digital Timer Functionality
+        function updateTimer() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+            document.getElementById('current-day').textContent = days[now.getDay()];
+            document.getElementById('current-date').textContent = 
+                `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            
+            let hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            
+            document.getElementById('current-time').textContent = 
+                `${hours}:${minutes}:${seconds} ${ampm}`;
+        }
+        
+        // Update timer every second
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Initial call
+        
+        // Visitor Counter
+        function updateVisitorCounter() {
+            // Get current count from localStorage or initialize to 0
+            let count = localStorage.getItem('nyaz_visitor_count') || 0;
+            count = parseInt(count) + 1;
+            
+            // Save updated count
+            localStorage.setItem('nyaz_visitor_count', count);
+            
+            // Display count
+            document.getElementById('visitor-count').textContent = count;
+        }
+        
+        // Update counter on page load
+        updateVisitorCounter();
     </script>
 </body>
-</html>
+                                                           </html>
