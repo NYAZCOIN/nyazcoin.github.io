@@ -46,11 +46,43 @@
             0% { transform: translateX(-100%) rotate(0deg); }
             100% { transform: translateX(100%) rotate(360deg); }
         }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+        
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .roadmap-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .community-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
     </style>
 </head>
 <body>
     <!-- Top Banner -->
-    <div class="top-banner"
+    <div class="top-banner">
+        <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
         <div id="digital-timer">
             <span id="current-day"></span>, 
             <span id="current-date"></span> | 
@@ -112,7 +144,6 @@
         </div>
     </div>
 
- </header> 
     <!-- Dynamic Banner Carousel -->
     <div class="banner-carousel">
         <div class="banner-track">
@@ -357,7 +388,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="js/script.js"></script>
 </body>
                         </html>
