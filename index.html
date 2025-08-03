@@ -4,717 +4,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYAZNATION - The Zestiest Meme Coin on Solana</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😺</text></svg>">
+    <meta name="description" content="Official NYAZ Coin - MEME 💬 FASHION 💮(LIFESTYLE)">
+    <link rel="icon" href="assets/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
-    <style>
-        /* Base styles */
-        :root {
-            --solana-purple: #9945FF;
-            --solana-green: #14F195;
-            --dark-bg: #0f0c29;
-            --darker-bg: #08061a;
-            --card-bg: #1a1830;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
-            color: #fff;
-            min-height: 100vh;
-            background-attachment: fixed;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .neon-text {
-            color: var(--solana-green);
-            text-shadow: 0 0 10px rgba(20, 241, 149, 0.7);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 5px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(90deg, var(--solana-purple), var(--solana-green));
-            color: white;
-            box-shadow: 0 0 15px rgba(153, 69, 255, 0.5);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(153, 69, 255, 0.8);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--solana-green);
-            border: 2px solid var(--solana-green);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(20, 241, 149, 0.1);
-            transform: translateY(-3px);
-        }
-        
-        /* Top Banner */
-        .top-banner {
-            background: linear-gradient(90deg, #9945FF, #14F195, #9945FF);
-            background-size: 200% 100%;
-            animation: gradientShift 3s linear infinite;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-            z-index: 1000;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-        
-        /* Sticky Header */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10, 8, 30, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            padding: 15px 0;
-        }
-        
-        header.scrolled {
-            padding: 10px 0;
-            background: rgba(15, 12, 41, 0.98);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-image {
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--solana-purple), var(--solana-green));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(90deg, var(--solana-purple), var(--solana-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .slogan {
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: #ddd;
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 8px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links a:hover, .nav-links a.active {
-            color: white;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--solana-green);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Countdown Timer */
-        .countdown-section {
-            background: rgba(10, 8, 30, 0.7);
-            padding: 30px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-        
-        .countdown-title-container {
-            overflow: hidden;
-            position: relative;
-            height: 40px;
-            margin-bottom: 20px;
-        }
-        
-        .scrolling-title {
-            position: absolute;
-            white-space: nowrap;
-            animation: scrollTitle 20s linear infinite;
-            color: var(--solana-green);
-            text-shadow: 0 0 10px #14F195, 0 0 20px #14F195;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-        
-        @keyframes scrollTitle {
-            0% { left: 100%; }
-            100% { left: -100%; }
-        }
-        
-        .light-trail {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: radial-gradient(circle at center, rgba(153, 69, 255, 0.2) 0%, transparent 70%);
-            animation: trailMovement 15s linear infinite;
-            z-index: -1;
-        }
-        
-        @keyframes trailMovement {
-            0% { transform: translateX(-100%) rotate(0deg); }
-            100% { transform: translateX(100%) rotate(360deg); }
-        }
-        
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .countdown-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 100px;
-            padding: 15px;
-            background: rgba(25, 20, 60, 0.7);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .countdown-unit span:first-child {
-            font-size: 2.5rem;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
-            color: var(--solana-green);
-            text-shadow: 0 0 10px rgba(20, 241, 149, 0.8);
-        }
-        
-        .countdown-label {
-            font-size: 1rem;
-            color: #aaa;
-            margin-top: 5px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,100" fill="rgba(20, 241, 149, 0.05)"/></svg>');
-            background-size: cover;
-            background-position: center right;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(153, 69, 255, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-            z-index: -1;
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .hero-content {
-            max-width: 700px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #ddd;
-            max-width: 600px;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        /* Tokenomics Section */
-        .tokenomics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .token-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-        
-        .token-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .token-card h3 {
-            color: var(--solana-green);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .token-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--solana-purple);
-        }
-        
-        .distribution-list {
-            list-style: none;
-        }
-        
-        .distribution-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .distribution-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .whitepaper-bar {
-            background: linear-gradient(90deg, var(--solana-purple), var(--darker-bg));
-            border-radius: 15px;
-            padding: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .whitepaper-bar h3 {
-            color: white;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        
-        .whitepaper-bar p {
-            color: #ddd;
-            max-width: 600px;
-        }
-        
-        .btn-whitepaper {
-            background: white;
-            color: var(--solana-purple);
-            font-weight: bold;
-            min-width: 200px;
-        }
-        
-        .chart-container {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .chart-image {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .chart-btn {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--solana-green);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .chart-btn i {
-            margin-right: 8px;
-        }
-        
-        .section-title.anti-inflation {
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 30px;
-        }
-        
-        .mechanics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .mechanic-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .mechanic-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .mechanic-card i {
-            color: var(--solana-green);
-            margin-bottom: 20px;
-        }
-        
-        .mechanic-card h4 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--solana-green);
-        }
-        
-        .mechanic-card p {
-            color: #ddd;
-        }
-        
-        /* Roadmap Section */
-        #roadmap {
-            background: var(--darker-bg);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        #roadmap::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 0,100 100,100" fill="rgba(153, 69, 255, 0.05)"/></svg>');
-            background-size: cover;
-            background-position: bottom left;
-            z-index: 0;
-        }
-        
-        .roadmap-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .roadmap-item {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .roadmap-item:hover {
-            transform: scale(1.03);
-        }
-        
-        .roadmap-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--solana-green);
-        }
-        
-        .roadmap-phase {
-            color: var(--solana-green);
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-        
-        .roadmap-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .roadmap-item ul {
-            list-style: none;
-            padding-left: 20px;
-        }
-        
-        .roadmap-item ul li {
-            position: relative;
-            padding: 8px 0;
-            padding-left: 25px;
-            color: #ddd;
-        }
-        
-        .roadmap-item ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--solana-green);
-            font-weight: bold;
-        }
-        
-        /* Community Section */
-        .community-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .community-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .community-card:hover {
-            transform: translateY(-10px);
-            background: linear-gradient(135deg, var(--card-bg), rgba(25, 20, 60, 0.7));
-        }
-        
-        .community-card i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--solana-green);
-        }
-        
-        .community-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .community-card p {
-            color: #ddd;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--darker-bg);
-            padding: 60px 0 30px;
-            position: relative;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .footer-brand .logo-text {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .footer-brand p {
-            color: #aaa;
-            margin-bottom: 20px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--card-bg);
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            transform: translateY(-5px);
-            background: linear-gradient(135deg, var(--solana-purple), var(--solana-green));
-        }
-        
-        footer h3 {
-            font-size: 1.3rem;
-            color: white;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        footer h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--solana-green);
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--solana-green);
-            transform: translateX(5px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #777;
-        }
-        
-        /* Mobile menu */
-        @media (max-width: 992px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: var(--darker-bg);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                transform: translateY(-150%);
-                transition: transform 0.4s ease;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                z
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
+        <div id="digital-timer">
+            <span id="current-day"></span>, 
+            <span id="current-date"></span> | 
+            <span id="current-time"></span>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="assets/logo.png" alt="NYAZ Logo" class="logo-image">
+                    <div>
+                        <div class="logo-text">NYAZNATION</div>
+                        <div class="slogan">Shake It, Meme It. Moon It</div>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#tokenomics">Tokenomics</a>
+                    <a href="#roadmap">Roadmap</a>
+                    <a href="staking.html">Staking</a>
+                    <a href="nfts.html">NFTs</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_RAYDIUM_CONTRACT" class="btn btn-primary">
+                        <i class="fas fa-coins"></i> Buy $NYAZ
+                    </a>
+                </div>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dynamic Banner Carousel -->
+    <div class="banner-carousel">
+        <div class="banner-track">
+            <img src="assets/banner1.png" alt="NYAZ Launch Banner">
+            <img src="assets/banner2.png" alt="NYAZ Staking">
+            <img src="assets/banner3.png" alt="NYAZ NFTs">
+            <img src="assets/banner4.png" alt="NYAZ Community">
+        </div>
+        <div class="banner-controls">
+            <div class="banner-dot active"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to <span class="neon-text">NYAZNATION</span></h1>
+                <p>The zestiest meme coin on Solana blockchain. Join our community of meme enthusiasts and crypto degens.</p>
+                <div class="cta-buttons">
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_RAYDIUM_CONTRACT" class="btn btn-primary">
+                        <i class="fas fa-coins"></i> Buy $NYAZ
+                    </a>
+                    <a href="#tokenomics" class="btn btn-secondary">
+                        <i class="fas fa-chart-pie"></i> Tokenomics
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="section">
+        <div class="container">
+            <h2 class="section-title">NYAZ <span class="neon-text">Tokenomics</span></h2>
+            
+            <div class="tokenomics-grid">
+                <div class="token-card">
+                    <h3>Token Distribution</h3>
+                    <ul class="distribution-list">
+                        <li><span>Presale (5%)</span> <span>5%</span></li>
+                        <li><span>Public Sales (Raydium)</span> <span>45%</span></li>
+                        <li><span>Airdrops & Contests</span> <span>15%</span></li>
+                        <li><span>Apps, Staking & Integration</span> <span>15%</span></li>
+                        <li><span>Marketing & Collaboration</span> <span>10%</span></li>
+                        <li><span>Team (6-Month Vesting)</span> <span>10%</span></li>
+                    </ul>
+                </div>
+                
+                <div class="token-card">
+                    <h3>Token Details</h3>
+                    <ul class="distribution-list">
+                        <li><span>Token Name</span> <span>NYAZ Coin</span></li>
+                        <li><span>Token Symbol</span> <span>$NYAZ</span></li>
+                        <li><span>Blockchain</span> <span>Solana</span></li>
+                        <li><span>Total Supply</span> <span>1,000,000,000</span></li>
+                        <li><span>Contract Address</span> <span>Coming Soon</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="whitepaper-bar">
+                <h3>NYAZ Whitepaper 2.0</h3>
+                <p>Read our comprehensive whitepaper to understand the full vision and mechanics of NYAZNATION</p>
+                <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk" class="btn btn-whitepaper" target="_blank">
+                    <i class="fas fa-file-alt"></i> View Whitepaper
+                </a>
+            </div>
+            
+            <div class="chart-container">
+                <img src="assets/tokenomics.png" alt="Tokenomics Chart" class="chart-image">
+                <a href="#" class="chart-btn">
+                    <i class="fas fa-download"></i> Download Full Tokenomics
+                </a>
+            </div>
+            
+            <h3 class="section-title anti-inflation">Anti-Inflation <span class="neon-text">Mechanics</span></h3>
+            
+            <div class="mechanics-grid">
+                <div class="mechanic-card">
+                    <i class="fas fa-fire fa-3x"></i>
+                    <h4>Token Burn</h4>
+                    <p>5% of every transaction is permanently burned, reducing supply over time.</p>
+                </div>
+                
+                <div class="mechanic-card">
+                    <i class="fas fa-piggy-bank fa-3x"></i>
+                    <h4>Staking Rewards</h4>
+                    <p>Earn passive income by staking your $NYAZ tokens in our secure pools.</p>
+                </div>
+                
+                <div class="mechanic-card">
+                    <i class="fas fa-sync-alt fa-3x"></i>
+                    <h4>Buyback System</h4>
+                    <p>Regular buybacks from transaction fees support token price stability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2 class="section-title">NYAZ <span class="neon-text">Roadmap</span></h2>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q3 2025</div>
+                    <h3>Phase 1: Launch & Foundation</h3>
+                    <ul>
+                        <li>Token launch on Raydium</li>
+                        <li>Community building</li>
+                        <li>Website & social media launch</li>
+                        <li>First AMA session</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q4 2025</div>
+                    <h3>Phase 2: NFTs, Roles & Creator Rewards</h3>
+                    <ul>
+                        <li>First NFT collection drop</li>
+                        <li>NFT badges for OGs, Whales & Creators</li>
+                        <li>Creator reward system</li>
+                        <li>Partnership announcements</li>
+                        <li>Community events & contests</li>
+                    </ul>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q1-Q2 2026</div>
+                    <h3>Phase 3: Merch, Staking & NYAZFI</h3>
+                    <ul>
+                        <li>NYAZ Merch Store</li>
+                        <li>Staking via NYAZFI</li>
+                        <li>Staking badge NFTs</li>
+                        <li>QR Code-linked Merch Tracking</li>
+                        <li>Meme Staking Rewards & Burn Models</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q3-Q4 2026</div>
+                    <h3>Phase 4: Meme Marketplace & Expansion</h3>
+                    <ul>
+                        <li>Launch Meme Marketplace</li>
+                        <li>Create, list, trade memes</li>
+                        <li>Integrate meme tipping and NFT flexing</li>
+                        <li>Partnerships with Solana memes & Fashion Brands</li>
+                        <li>CEX Listing & DAO Prep begins</li>
+                    </ul>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-phase">Q1-Q2 2027</div>
+                    <h3>Phase 5: DAO Events & Global Drops</h3>
+                    <ul>
+                        <li>NYAZ DAO Voting system</li>
+                        <li>IRL Fashion Drops & Artistes Collabs</li>
+                        <li>ZestFeed blogs & Global Fashion Events</li>
+                        <li>NFT-bookings & Ad Spots</li>
+                        <li>NYAZIFY App prototype</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Join Our <span class="neon-text">Community</span></h2>
+            
+            <div class="community-links">
+                <a href="https://t.me/nyaznation" class="community-card" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    <h3>Telegram</h3>
+                    <p>Join our active Telegram community for the latest updates</p>
+                </a>
+                
+                <a href="https://twitter.com/nyaznation" class="community-card" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <h3>Twitter</h3>
+                    <p>Follow us for announcements and meme contests</p>
+                </a>
+                
+                <a href="https://discord.gg/nyaznation" class="community-card" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    <h3>Discord</h3>
+                    <p>Chat with the community and team members</p>
+                </a>
+                
+                <a href="https://youtube.com/NYAZNATION" class="community-card" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <h3>YouTube</h3>
+                    <p>Watch our latest videos and tutorials</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">NYAZNATION</div>
+                    <p>Shake It, Meme It. Moon It</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/nyaznation" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/nyaznation" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://discord.gg/nyaznation" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="https://youtube.com/NYAZNATION" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="#tokenomics">Tokenomics</a>
+                        <a href="#roadmap">Roadmap</a>
+                        <a href="staking.html">Staking</a>
+                        <a href="nfts.html">NFTs</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <div class="footer-links">
+                        <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk">Whitepaper</a>
+                        <a href="#">Audit Report</a>
+                        <a href="#">GitHub</a>
+                        <a href="https://linktr.ee/nyazcoin">Linktree</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 NYAZNATION. All rights reserved. | Visitors: <span id="visitor-count">0</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+    </html>
