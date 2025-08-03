@@ -391,63 +391,75 @@
         }
         
         /* ===== ROADMAP SECTION ===== */
-        .roadmap-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+        <!-- Roadmap Section -->
+<section id="roadmap" class="section" style="background: var(--darker-bg);">
+    <div class="container">
+        <h2 class="section-title">NYAZ <span class="neon-text">Roadmap</span></h2>
         
-        .roadmap-item {
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid rgba(153, 69, 255, 0.3);
-            border-radius: 15px;
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-        }
+        <div class="roadmap-container">
+            <div class="roadmap-item">
+                <div class="roadmap-phase">Q3 2025</div>
+                <h3>Phase 1: Launch & Foundation</h3>
+                <ul>
+                    <li>Token launch on Solana <span class="completed-badge">Completed</span></li>
+                    <li>Community building <span class="completed-badge">Completed</span></li>
+                    <li>Website & social media launch <span class="completed-badge">Completed</span></li>
+                    <li>First AMA session</li>
+                </ul>
+            </div>
+            
+            <div class="roadmap-item">
+                <div class="roadmap-phase">Q4 2025</div>
+                <h3>Phase 2: NFTs, Roles & Creator Rewards</h3>
+                <ul>
+                    <li>First NFT collection drop</li>
+                    <li>NFT badges for OGs, Whales & Creators</li>
+                    <li>Creator reward system</li>
+                    <li>Partnership announcements</li>
+                    <li>Community events & contests</li>
+                </ul>
+            </div>
+            
+            <div class="roadmap-item">
+                <div class="roadmap-phase">Q1-Q2 2026</div>
+                <h3>Phase 3: Merch, Staking & NYAZFI</h3>
+                <ul>
+                    <li>NYAZ Merch Store</li>
+                    <li>Staking via NYAZFI</li>
+                    <li>Staking badge NFTs</li>
+                    <li>QR Code-linked Merch Tracking</li>
+                    <li>Meme Staking Rewards & Burn Models</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-phase">Q3-Q4 2026</div>
+                <h3>Phase 4: Meme Marketplace & Expansion</h3>
+                <ul>
+                    <li>Launch Meme Marketplace</li>
+                    <li>Create, list, trade memes</li>
+                    <li>Integrate meme tipping and NFT flexing</li>
+                    <li>Partnerships with Solana memes & Fashion Brands</li>
+                    <li>CEX Listing & DAO Prep begins</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-phase">Q1-Q2 2027</div>
+                <h3>Phase 5: DAO Events & Global Drops</h3>
+                <ul>
+                    <li>NYAZ DAO Voting system</li>
+                    <li>IRL Fashion Drops & Artistes Collabs</li>
+                    <li>ZestFeed blogs & Global Fashion Events</li>
+                    <li>NFT-bookings & Ad Spots</li>
+                    <li>NYAZIFY App prototype</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    
         
-        .roadmap-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .roadmap-phase {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: var(--solana-purple);
-            color: white;
-            padding: 5px 15px;
-            border-bottom-left-radius: 15px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        
-        .roadmap-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--solana-green);
-        }
-        
-        .roadmap-item ul {
-            list-style: none;
-            padding-left: 20px;
-        }
-        
-        .roadmap-item ul li {
-            position: relative;
-            padding: 8px 0;
-            padding-left: 25px;
-        }
-        
-        .roadmap-item ul li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--solana-green);
-            font-weight: bold;
-        }
         
         /* ===== COMMUNITY SECTION ===== */
         .community-links {
