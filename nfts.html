@@ -13,21 +13,10 @@
     <!-- Top Banner -->
     <div class="top-banner">
         <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
-    </div>
-    
-    <!-- Dynamic Banner Carousel -->
-    <div class="banner-carousel">
-        <div class="banner-track">
-            <img src="assets/banner1.png" alt="NYAZ Launch Banner">
-            <img src="assets/banner2.png" alt="NYAZ Staking">
-            <img src="assets/banner3.png" alt="NYAZ NFTs">
-            <img src="assets/banner4.png" alt="NYAZ Community">
-        </div>
-        <div class="banner-controls">
-            <div class="banner-dot active"></div>
-            <div class="banner-dot"></div>
-            <div class="banner-dot"></div>
-            <div class="banner-dot"></div>
+        <div id="digital-timer">
+            <span id="current-day"></span>, 
+            <span id="current-date"></span> | 
+            <span id="current-time"></span>
         </div>
     </div>
     
@@ -49,7 +38,7 @@
                     <a href="staking.html">Staking</a>
                     <a href="nfts.html" class="active">NFTs</a>
                     <a href="contact.html">Contact</a>
-                    <a href="https://pump.fun/nyaz" class="btn btn-primary">
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_RAYDIUM_CONTRACT" class="btn btn-primary">
                         <i class="fas fa-coins"></i> Buy $NYAZ
                     </a>
                 </div>
@@ -57,6 +46,22 @@
             </nav>
         </div>
     </header>
+
+    <!-- Dynamic Banner Carousel -->
+    <div class="banner-carousel">
+        <div class="banner-track">
+            <img src="assets/banner1.png" alt="NYAZ Launch Banner">
+            <img src="assets/banner2.png" alt="NYAZ Staking">
+            <img src="assets/banner3.png" alt="NYAZ NFTs">
+            <img src="assets/banner4.png" alt="NYAZ Community">
+        </div>
+        <div class="banner-controls">
+            <div class="banner-dot active"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+        </div>
+    </div>
 
     <!-- NFTs Hero Section -->
     <section class="hero">
@@ -147,10 +152,10 @@
                     <div class="logo-text">NYAZNATION</div>
                     <p>Shake It, Meme It. Moon It</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+                        <a href="https://twitter.com/nyaznation" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/nyaznation" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://discord.gg/nyaznation" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="https://youtube.com/NYAZNATION" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div>
@@ -167,19 +172,20 @@
                 <div>
                     <h3>Resources</h3>
                     <div class="footer-links">
-                        <a href="#">Whitepaper</a>
+                        <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk">Whitepaper</a>
                         <a href="#">Audit Report</a>
                         <a href="#">GitHub</a>
-                        <a href="#">FAQ</a>
+                        <a href="https://linktr.ee/nyazcoin">Linktree</a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 NYAZNATION. All rights reserved.</p>
+                <p>&copy; 2025 NYAZNATION. All rights reserved. | Visitors: <span id="visitor-count">0</span></p>
             </div>
         </div>
     </footer>
 
-
+    <script src="js/script.js"></script>
+    <script src="js/nfts.js"></script>
 </body>
-</html>
+                        </html>
