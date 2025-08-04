@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presale | NYAZNATION</title>
+    <meta name="description" content="NYAZNATION Token Presale">
+    <link rel="icon" href="assets/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/presale.css">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>MEME 💬 FASHION 💮(LIFESTYLE) | Zest It. Meme It. Moon It</p>
+        <div id="digital-timer">
+            <span id="current-day"></span>, 
+            <span id="current-date"></span> | 
+            <span id="current-time"></span>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="assets/logo.png" alt="NYAZ Logo" class="logo-image">
+                    <div>
+                        <div class="logo-text">NYAZNATION</div>
+                        <div class="slogan">Shake It, Meme It. Moon It</div>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#tokenomics">Tokenomics</a>
+                    <a href="index.html#roadmap">Roadmap</a>
+                    <a href="staking.html">Staking</a>
+                    <a href="nfts.html">NFTs</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="presale.html" class="active">Presale</a>
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_RAYDIUM_CONTRACT" class="btn btn-primary">
+                        <i class="fas fa-coins"></i> Buy $NYAZ
+                    </a>
+                </div>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Dynamic Banner Carousel -->
+    <div class="banner-carousel">
+        <div class="banner-track">
+            <img src="assets/banner1.png" alt="NYAZ Launch Banner">
+            <img src="assets/banner2.png" alt="NYAZ Staking">
+            <img src="assets/banner3.png" alt="NYAZ NFTs">
+            <img src="assets/banner4.png" alt="NYAZ Community">
+        </div>
+        <div class="banner-controls">
+            <div class="banner-dot active"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+        </div>
+    </div>
+
+    <!-- Presale Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>NYAZ <span class="neon-text">Presale</span></h1>
+                <p>Get in early and secure your $NYAZ tokens at a discounted price before the public launch.</p>
+                <div class="cta-buttons">
+                    <a href="#presale" class="btn btn-primary">
+                        <i class="fas fa-coins"></i> Participate Now
+                    </a>
+                    <a href="#details" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i> Presale Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presale Countdown -->
+    <section id="countdown" class="section">
+        <div class="container">
+            <h2 class="section-title">Presale <span class="neon-text">Countdown</span></h2>
+            <div class="countdown-container">
+                <div class="countdown-timer">
+                    <div class="countdown-segment">
+                        <span id="presale-days">00</span>
+                        <span>Days</span>
+                    </div>
+                    <div class="countdown-segment">
+                        <span id="presale-hours">00</span>
+                        <span>Hours</span>
+                    </div>
+                    <div class="countdown-segment">
+                        <span id="presale-minutes">00</span>
+                        <span>Minutes</span>
+                    </div>
+                    <div class="countdown-segment">
+                        <span id="presale-seconds">00</span>
+                        <span>Seconds</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="presale-progress"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>0%</span>
+                        <span id="presale-raised">$0</span> raised of <span id="presale-target">$500,000</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presale Form -->
+    <section id="presale" class="section" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2 class="section-title">Participate in <span class="neon-text">Presale</span></h2>
+            <div class="presale-form-container">
+                <div class="presale-card">
+                    <div class="presale-header">
+                        <h3>NYAZ Presale</h3>
+                        <div class="presale-price">1 NYAZ = $0.0015</div>
+                    </div>
+                    <div class="presale-details">
+                        <div class="detail-row">
+                            <span>Min Purchase:</span>
+                            <span>100 NYAZ ($0.15)</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Max Purchase:</span>
+                            <span>1,000,000 NYAZ ($1,500)</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Payment Methods:</span>
+                            <span>SOL, USDC, USDT</span>
+                        </div>
+                    </div>
+                    <form class="presale-form">
+                        <div class="form-group">
+                            <label for="presale-amount">Amount of NYAZ</label>
+                            <input type="number" id="presale-amount" placeholder="Enter NYAZ amount" min="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment-method">Payment Method</label>
+                            <select id="payment-method" required>
+                                <option value="">Select payment method</option>
+                                <option value="SOL">SOL</option>
+                                <option value="USDC">USDC</option>
+                                <option value="USDT">USDT</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="wallet-address">Your Wallet Address</label>
+                            <input type="text" id="wallet-address" placeholder="Enter your wallet address" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-wallet"></i> Connect Wallet & Buy
+                        </button>
+                    </form>
+                </div>
+                <div class="presale-info">
+                    <h3>Presale Information</h3>
+                    <div class="info-card">
+                        <i class="fas fa-coins"></i>
+                        <h4>Total Supply</h4>
+                        <p>50,000,000 NYAZ (5% of total supply)</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-percentage"></i>
+                        <h4>Bonus Structure</h4>
+                        <ul>
+                            <li>First 24 hours: 20% bonus</li>
+                            <li>First week: 15% bonus</li>
+                            <li>Second week: 10% bonus</li>
+                            <li>Final week: 5% bonus</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h4>Vesting Schedule</h4>
+                        <p>25% at TGE, then 25% monthly for 3 months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presale Details -->
+    <section id="details" class="section">
+        <div class="container">
+            <h2 class="section-title">Presale <span class="neon-text">Details</span></h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Why Participate?</h3>
+                    <p>Get NYAZ tokens at the lowest possible price before public launch. Early participants receive bonus tokens and exclusive benefits.</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Process</h3>
+                    <p>All funds are held in escrow until presale completion. Smart contract audited by third-party security firms.</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Exclusive Benefits</h3>
+                    <p>Presale participants receive early access to staking, NFT drops, and community governance voting rights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">NYAZNATION</div>
+                    <p>Shake It, Meme It. Moon It</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/nyaznation" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/nyaznation" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://discord.gg/nyaznation" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="https://youtube.com/NYAZNATION" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#tokenomics">Tokenomics</a>
+                        <a href="index.html#roadmap">Roadmap</a>
+                        <a href="staking.html">Staking</a>
+                        <a href="nfts.html">NFTs</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="presale.html">Presale</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Resources</h3>
+                    <div class="footer-links">
+                        <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk">Whitepaper</a>
+                        <a href="#">Audit Report</a>
+                        <a href="#">GitHub</a>
+                        <a href="https://linktr.ee/nyazcoin">Linktree</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 NYAZNATION. All rights reserved. | Visitors: <span id="visitor-count">0</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/presale.js"></script>
+</body>
+  </html>
