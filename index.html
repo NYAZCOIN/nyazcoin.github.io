@@ -146,13 +146,7 @@
             height: 50px;
             width: 50px;
             border-radius: 50%;
-            background: linear-gradient(45deg, var(--solana-purple), var(--solana-green));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
+            object-fit: contain;
         }
         
         .logo-text {
@@ -556,22 +550,13 @@
         
         .roadmap-item ul {
             list-style: none;
-            padding-left: 20px;
+            padding-left: 0;
         }
         
         .roadmap-item ul li {
             position: relative;
             padding: 8px 0;
-            padding-left: 25px;
             color: #ddd;
-        }
-        
-        .roadmap-item ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--solana-green);
-            font-weight: bold;
         }
         
         /* Community Section */
@@ -771,7 +756,7 @@
         <div class="container">
             <nav>
                 <div class="logo-container">
-                    <div class="logo-image">NY</div>
+                    <img src="assets/logo.png" alt="NYAZ Logo" class="logo-image">
                     <div>
                         <div class="logo-text">NYAZNATION</div>
                         <div class="slogan">Shake It, Meme It. Moon It</div>
@@ -781,11 +766,11 @@
                     <a href="#home" class="active">Home</a>
                     <a href="#tokenomics">Tokenomics</a>
                     <a href="#roadmap">Roadmap</a>
-                    <a href="#staking">Staking</a>
-                    <a href="#nfts">NFTs</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#presale">Presale</a>
-                    <a href="#buy" class="btn btn-primary">
+                    <a href="staking.html">Staking</a>
+                    <a href="nfts.html">NFTs</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="presale.html">Presale</a>
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_RAYDIUM_CONTRACT" class="btn btn-primary">
                         <i class="fas fa-coins"></i> Buy $NYAZ
                     </a>
                 </div>
@@ -827,7 +812,7 @@
                 <h1>Welcome to <span class="neon-text">NYAZNATION</span></h1>
                 <p>The zestiest meme coin on Solana blockchain. Join our community of meme enthusiasts and crypto degens.</p>
                 <div class="cta-buttons">
-                    <a href="#buy" class="btn btn-primary">
+                    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=YOUR_RAYDIUM_CONTRACT" class="btn btn-primary">
                         <i class="fas fa-coins"></i> Buy $NYAZ
                     </a>
                     <a href="#tokenomics" class="btn btn-secondary">
@@ -869,17 +854,15 @@
             </div>
             
             <div class="whitepaper-bar">
-                <div>
-                    <h3>NYAZ Whitepaper 2.0</h3>
-                    <p>Read our comprehensive whitepaper to understand the full vision and mechanics of NYAZNATION</p>
-                </div>
-                <a href="#" class="btn btn-whitepaper">
+                <h3>NYAZ Whitepaper 2.0</h3>
+                <p>Read our comprehensive whitepaper to understand the full vision and mechanics of NYAZNATION</p>
+                <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk" class="btn btn-whitepaper" target="_blank">
                     <i class="fas fa-file-alt"></i> View Whitepaper
                 </a>
             </div>
             
             <div class="chart-container">
-                <img src="https://i.imgur.com/5X4bKQp.png" alt="Tokenomics Chart" class="chart-image">
+                <img src="assets/tokenomics.png" alt="Tokenomics Chart" class="chart-image">
                 <a href="#" class="chart-btn">
                     <i class="fas fa-download"></i> Download Full Tokenomics
                 </a>
@@ -910,7 +893,7 @@
     </section>
 
     <!-- Roadmap Section -->
-    <section id="roadmap" class="section">
+    <section id="roadmap" class="section" style="background: var(--darker-bg);">
         <div class="container">
             <h2 class="section-title">NYAZ <span class="neon-text">Roadmap</span></h2>
             
@@ -1027,91 +1010,30 @@
                 <div>
                     <h3>Quick Links</h3>
                     <div class="footer-links">
-                        <a href="#home">Home</a>
+                        <a href="index.html">Home</a>
                         <a href="#tokenomics">Tokenomics</a>
                         <a href="#roadmap">Roadmap</a>
-                        <a href="#staking">Staking</a>
-                        <a href="#nfts">NFTs</a>
-                        <a href="#contact">Contact</a>
+                        <a href="staking.html">Staking</a>
+                        <a href="nfts.html">NFTs</a>
+                        <a href="contact.html">Contact</a>
                     </div>
                 </div>
                 <div>
                     <h3>Resources</h3>
                     <div class="footer-links">
-                        <a href="#">Whitepaper</a>
+                        <a href="https://drive.google.com/file/d/1JVMs9IsZyWBgm7LAFS2eIxe9I_sp8YLb/view?usp=drivesdk">Whitepaper</a>
                         <a href="#">Audit Report</a>
                         <a href="#">GitHub</a>
-                        <a href="#">Linktree</a>
+                        <a href="https://linktr.ee/nyazcoin">Linktree</a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 NYAZNATION. All rights reserved. | Visitors: <span id="visitor-count">18,452</span></p>
+                <p>&copy; 2025 NYAZNATION. All rights reserved. | Visitors: <span id="visitor-count">0</span></p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Sticky header functionality
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Close menu when clicking on links
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
-            });
-        });
-
-        // Countdown timer functionality
-        function updateCountdown() {
-            // Set the launch date (3 days from now)
-            const launchDate = new Date();
-            launchDate.setDate(launchDate.getDate() + 3);
-            
-            const now = new Date();
-            const diff = launchDate - now;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        // Initialize countdown
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
