@@ -127,6 +127,47 @@ body {
     gap: 5px;
 }
 
+/* ===== EVENT COUNTDOWN ===== */
+.event-countdown {
+    background: linear-gradient(135deg, rgba(20, 241, 149, 0.1) 0%, rgba(153, 69, 255, 0.1) 100%);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(153, 69, 255, 0.3);
+}
+
+.countdown-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--solana-green);
+    text-shadow: var(--neon-glow);
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.countdown-segment span:first-child {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--solana-purple);
+    margin-bottom: 5px;
+}
+
+.countdown-segment span:last-child {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
 /* ===== HEADER ===== */
 header {
     background: rgba(10, 10, 26, 0.95);
@@ -699,6 +740,18 @@ footer {
     .banner-carousel {
         height: 250px;
     }
+    
+    .countdown-timer {
+        gap: 10px;
+    }
+    
+    .countdown-segment {
+        min-width: 70px;
+    }
+    
+    .countdown-segment span:first-child {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -722,220 +775,16 @@ footer {
         font-size: 0.8rem;
         padding: 3px 10px;
     }
-}
-
-/* ===== Staking Page Specific Styles ===== */
-.staking-calculator {
-    background: rgba(20, 20, 40, 0.6);
-    border: 1px solid rgba(153, 69, 255, 0.3);
-    border-radius: 15px;
-    padding: 30px;
-    margin: 40px auto;
-    max-width: 600px;
-}
-
-.calculator-title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--solana-green);
-}
-
-.calculator-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-weight: 500;
-}
-
-.form-group input {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(153, 69, 255, 0.3);
-    background: rgba(10, 10, 26, 0.5);
-    color: white;
-    font-size: 1rem;
-}
-
-.calculator-result {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(10, 10, 26, 0.3);
-    border-radius: 8px;
-    text-align: center;
-}
-
-.staking-pools {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.pool-card {
-    background: rgba(20, 20, 40, 0.6);
-    border: 1px solid rgba(153, 69, 255, 0.3);
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    transition: var(--transition);
-}
-
-.pool-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.pool-card h3 {
-    color: var(--solana-green);
-    margin-bottom: 20px;
-}
-
-.pool-card .apy {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--solana-purple);
-    margin: 15px 0;
-}
-
-.pool-card .btn {
-    margin-top: 20px;
-}
-
-/* ===== NFTs Page Specific Styles ===== */
-.nft-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.nft-card {
-    background: rgba(20, 20, 40, 0.6);
-    border: 1px solid rgba(153, 69, 255, 0.3);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.nft-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.nft-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.nft-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.nft-info h3 {
-    color: var(--solana-green);
-    margin-bottom: 10px;
-}
-
-.nft-info p {
-    color: #ddd;
-    margin-bottom: 15px;
-}
-
-/* ===== Contact Page Specific Styles ===== */
-.contact-form {
-    background: rgba(20, 20, 40, 0.6);
-    border: 1px solid rgba(153, 69, 255, 0.3);
-    border-radius: 15px;
-    padding: 30px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form .form-group {
-    margin-bottom: 20px;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(153, 69, 255, 0.3);
-    background: rgba(10, 10, 26, 0.5);
-    color: white;
-    font-size: 1rem;
-}
-
-.contact-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.contact-form .btn {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.1rem;
-}
-
-.form-message {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    display: none;
-}
-
-.form-message.success {
-    background: rgba(20, 241, 149, 0.1);
-    border: 1px solid var(--solana-green);
-    display: block;
-}
-
-.form-message.error {
-    background: rgba(255, 69, 69, 0.1);
-    border: 1px solid #ff4545;
-    display: block;
-}
-
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.info-card {
-    background: rgba(20, 20, 40, 0.6);
-    border: 1px solid rgba(153, 69, 255, 0.3);
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-}
-
-.info-card i {
-    font-size: 2.5rem;
-    color: var(--solana-green);
-    margin-bottom: 20px;
-}
-
-.info-card h3 {
-    margin-bottom: 15px;
-    color: var(--solana-purple);
+    
+    .countdown-segment {
+        min-width: 60px;
     }
+    
+    .countdown-segment span:first-child {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-title {
+        font-size: 1.5rem;
+    }
+}
