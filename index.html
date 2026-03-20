@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NYAZ Ecosystem – SHEBI | Cultural Legacy on Web3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background:#000; color:#e0e0e0; overflow-x:hidden; }
+    h1,h2,h3 { font-family: 'Orbitron', sans-serif; }
+    .neon-gold { text-shadow: 0 0 15px #ffd700, 0 0 30px #ffaa00; }
+    .glass { background: rgba(20,20,30,0.45); backdrop-filter: blur(16px); border:1px solid rgba(255,215,0,0.2); border-radius:20px; }
+    .particle { position:absolute; pointer-events:none; color:#ffd700; opacity:0.3; animation:float 20s infinite linear; }
+    @keyframes float { 0% { transform:translateY(100vh) rotate(0deg); } 100% { transform:translateY(-100vh) rotate(720deg); } }
+  </style>
+</head>
+<body class="relative">
+
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="particle text-5xl" style="left:10%; top:20%; animation-delay:0s">✦</div>
+    <div class="particle text-6xl" style="left:35%; top:40%; animation-delay:5s">⚜</div>
+    <div class="particle text-4xl" style="left:65%; top:60%; animation-delay:10s">❋</div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 glass backdrop-blur-xl border-b border-yellow-900/40">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <span class="text-4xl neon-gold">NYAZ</span>
+      <div class="flex gap-10 text-lg">
+        <a href="shebi.html" class="hover:text-yellow-400 transition">SHEBI</a>
+        <a href="nyazify.html" class="hover:text-yellow-400 transition">NYAZIFY</a>
+        <a href="shege.html" class="hover:text-yellow-400 transition">SHEGE</a>
+        <a href="rme.html" class="hover:text-yellow-400 transition">RME</a>
+        <a href="dzidzi.html" class="hover:text-yellow-400 transition">DZIDZI</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center pt-32 pb-20 relative">
+    <div class="max-w-5xl mx-auto px-6 text-center space-y-12" data-aos="fade-up">
+      <h1 class="text-7xl md:text-9xl font-bold neon-gold">NYAZ ECOSYSTEM</h1>
+      <p class="text-4xl md:text-6xl text-white/80">Prestige • Fashion • Knowledge • Nourishment</p>
+      <p class="text-2xl max-w-4xl mx-auto text-white/70">SHEBI leads — 200 cultural NFTs • Fair launch • African legacy on Solana</p>
+      <div class="flex flex-wrap justify-center gap-8 mt-12">
+        <a href="shebi.html" class="px-12 py-6 bg-gradient-to-r from-yellow-600 to-amber-800 rounded-2xl text-2xl font-bold hover:scale-105 transition">Enter SHEBI</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Cards -->
+  <section class="py-24 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+      <a href="shebi.html" class="glass p-10 text-center hover:scale-105 transition">
+        <h3 class="text-3xl neon-gold">SHEBI</h3>
+        <p class="mt-4">Fashion & NFTs</p>
+      </a>
+      <a href="nyazify.html" class="glass p-10 text-center hover:scale-105 transition">
+        <h3 class="text-3xl neon-gold">NYAZIFY</h3>
+        <p class="mt-4">Superapp Vision</p>
+      </a>
+      <a href="shege.html" class="glass p-10 text-center hover:scale-105 transition">
+        <h3 class="text-3xl neon-gold">SHEGE</h3>
+        <p class="mt-4">Prestige & Impact</p>
+      </a>
+      <div class="glass p-10 text-center">
+        <h3 class="text-3xl neon-gold">RME / DZIDZI</h3>
+        <p class="mt-4">Education & Food</p>
+      </div>
+    </div>
+  </section>
+
+  <script>AOS.init({duration:1000,once:true});</script>
+</body>
+</html>
