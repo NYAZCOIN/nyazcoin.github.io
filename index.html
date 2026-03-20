@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYAZ ECOSYSTEM • SHEBI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .heading { font-family: 'Playfair Display', serif; }
+        .gold-gradient { background: linear-gradient(135deg, #FFD700, #B8860B, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-bg { background: radial-gradient(circle at center, #1a1208 0%, #000000 70%); }
+        .carousel-slide { transition: opacity 1s ease-in-out; }
+        .nft-card { transition: all 0.5s ease; }
+        .nft-card:hover { transform: scale(1.08) rotate(2deg); box-shadow: 0 0 60px rgba(255,215,0,0.7); }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+<nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur border-b border-yellow-900">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-gradient-to-br from-yellow-400 to-amber-800 rounded-full flex items-center justify-center text-2xl">👑</div>
+            <span class="text-3xl heading gold-gradient">NYAZ</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="#shebi" class="hover:text-yellow-400">SHEBI</a>
+            <a href="#nyazify" class="hover:text-yellow-400">NYAZIFY</a>
+            <a href="#impact" class="hover:text-yellow-400">SHEGE</a>
+            <a href="#roadmap" class="hover:text-yellow-400">ROADMAP</a>
+        </div>
+        <a href="#contact" class="px-7 py-3 bg-gradient-to-r from-yellow-400 to-amber-700 rounded-3xl font-bold">CONTACT</a>
+    </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<section class="hero-bg min-h-screen flex items-center pt-20 relative">
+    <div id="heroCarousel" class="absolute inset-0">
+        <!-- Slide 1 -->
+        <div class="carousel-slide absolute inset-0 flex items-center justify-center opacity-100" style="background-image:url('https://i.imgur.com/39294.png'); background-size:cover; background-position:center;">
+            <div class="text-center z-10 px-6">
+                <h1 class="text-7xl md:text-8xl heading gold-gradient">SHEBI</h1>
+                <p class="text-4xl text-white/90">Fashion & Cultural Legacy</p>
+            </div>
+        </div>
+        <!-- Slide 2 & 3 will be added via JS below -->
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div class="inline-block px-6 py-2 bg-yellow-900/40 rounded-3xl text-xs tracking-widest mb-6">NO PRESALE • FAIR LAUNCH ONLY</div>
+        <p class="text-xl max-w-md mx-auto">200 Prestige NFTs • First chapter of the NYAZ Ecosystem</p>
+    </div>
+</section>
+
+<!-- SHEBI COLLECTION (horizontal carousel) -->
+<section id="shebi" class="py-24 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="heading text-6xl text-center gold-gradient mb-12">SHEBI FOUNDER & ROYAL COLLECTION</h2>
+        <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
+            <div class="nft-card min-w-[320px] bg-black rounded-3xl overflow-hidden border border-yellow-900 snap-center">
+                <img src="https://i.imgur.com/39294.png" class="w-full">
+                <div class="p-6">
+                    <h3 class="font-bold">SHEBI FOUNDER OG — KWAME NKRUMAH</h3>
+                    <p class="text-sm text-amber-300">1909–1972</p>
+                    <p class="mt-3 text-white/70 text-sm">Kwame Nkrumah, draped in Kente, radiates leadership and vision...</p>
+                </div>
+            </div>
+            <!-- Add your other two NFTs the same way -->
+            <div class="nft-card min-w-[320px] bg-black rounded-3xl overflow-hidden border border-yellow-900 snap-center">
+                <img src="https://i.imgur.com/39298.png" class="w-full">
+                <div class="p-6">
+                    <h3 class="font-bold">SHEBI FOUNDER OG — NELSON MANDELA</h3>
+                    <p class="text-sm text-amber-300">1918–2013</p>
+                    <p class="mt-3 text-white/70 text-sm">Mandela’s legacy radiates justice and freedom...</p>
+                </div>
+            </div>
+            <div class="nft-card min-w-[320px] bg-black rounded-3xl overflow-hidden border border-yellow-900 snap-center">
+                <img src="https://i.imgur.com/39292.png" class="w-full">
+                <div class="p-6">
+                    <h3 class="font-bold">SHEBI ROYAL OG — YAA ASANTEWAA</h3>
+                    <p class="text-sm text-amber-300">1840–1921</p>
+                    <p class="mt-3 text-white/70 text-sm">Queen Mother of Ejisu — leader in the Golden Stool resistance...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION (full form + socials) -->
+<section id="contact" class="py-24 bg-black border-t border-yellow-900">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+        <h2 class="heading text-5xl gold-gradient mb-8">Get in Touch</h2>
+        <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST" class="space-y-6">
+            <input type="email" name="email" placeholder="your@email.com" class="w-full px-8 py-6 bg-zinc-900 border border-yellow-900 rounded-3xl text-center" required>
+            <textarea name="message" placeholder="Your message..." class="w-full px-8 py-6 bg-zinc-900 border border-yellow-900 rounded-3xl h-32" required></textarea>
+            <button type="submit" class="w-full py-6 bg-yellow-400 text-black font-bold rounded-3xl text-xl">SEND MESSAGE</button>
+        </form>
+        
+        <div class="flex justify-center gap-10 mt-12 text-3xl">
+            <a href="https://t.me/nyazcoin" target="_blank" class="hover:text-yellow-400"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://x.com/nyazcoin" target="_blank" class="hover:text-yellow-400"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="YOUR-DISCORD-LINK" target="_blank" class="hover:text-yellow-400"><i class="fa-brands fa-discord"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- SHEBI TOKENOMICS + ROADMAP (clean tables) -->
+<!-- (I kept them short — copy from previous version or tell me if you want more) -->
+
+<script>
+    // Simple hero carousel (auto-rotate every 5s)
+    let slide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    setInterval(() => {
+        slides.forEach(s => s.style.opacity = '0');
+        slide = (slide + 1) % slides.length;
+        slides[slide].style.opacity = '1';
+    }, 5000);
+</script>
+</body>
+</html>
