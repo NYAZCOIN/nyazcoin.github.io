@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NyazHub – SHƐBI FashFi & Cultural Legacy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; background:#000; color:#e0e0e0; overflow-x:hidden; }
+    h1,h2 { font-family: 'Orbitron', sans-serif; }
+    .neon-gold { text-shadow: 0 0 15px #ffd700, 0 0 30px #ffaa00; }
+    .glass { background: rgba(20,20,30,0.45); backdrop-filter: blur(16px); border: 1px solid rgba(255,215,0,0.25); border-radius: 20px; }
+    .carousel-img { transition: opacity 1.5s ease; }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 glass backdrop-blur-xl border-b border-yellow-900/40">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-800 rounded-2xl flex items-center justify-center text-3xl">👑</div>
+        <span class="text-4xl font-bold neon-gold">NyazHub</span>
+      </div>
+      <div class="flex gap-8 text-lg font-medium">
+        <a href="shebi.html" class="hover:text-yellow-400 transition">SHƐBI</a>
+        <a href="nyazify.html" class="hover:text-yellow-400 transition">NYAZIFY</a>
+        <a href="shege.html" class="hover:text-yellow-400 transition">SHEGE</a>
+      </div>
+      <button onclick="openWhitelistPopup()" class="px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-700 rounded-3xl text-black font-bold hover:scale-105 transition">Whitelist for Drops</button>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel + GenZ Drip -->
+  <section class="min-h-screen relative flex items-center pt-20">
+    <div id="heroCarousel" class="absolute inset-0">
+      <!-- Generated fashion images will go here – replace URLs with your downloaded ones -->
+      <img src="https://i.imgur.com/placeholder1.jpg" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-100" alt="SHƐBI GenZ Drip">
+      <img src="https://i.imgur.com/placeholder2.jpg" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0" alt="SHƐBI GenZ Drip">
+      <img src="https://i.imgur.com/placeholder3.jpg" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0" alt="SHƐBI GenZ Drip">
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+      <h1 class="text-7xl md:text-9xl font-bold neon-gold">NyazHub</h1>
+      <p class="text-5xl text-white/90 mt-4">SHƐBI FashFi • Prestige NFTs • Cultural Legacy</p>
+      <div id="countdown" class="mt-8 text-4xl font-mono text-yellow-400"></div>
+      <div class="flex flex-wrap justify-center gap-6 mt-12">
+        <a href="shebi.html" class="px-12 py-6 bg-gradient-to-r from-yellow-600 to-amber-800 rounded-3xl text-2xl font-bold hover:scale-110 transition">Explore SHƐBI</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Whitelist Popup -->
+  <div id="whitelistPopup" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+    <div class="glass p-10 rounded-3xl max-w-md w-full mx-4">
+      <h2 class="text-4xl neon-gold text-center">Join the SHƐBI Whitelist</h2>
+      <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" class="mt-8 space-y-6">
+        <input type="email" name="email" placeholder="Your Email" class="w-full p-5 bg-black/50 border border-yellow-600 rounded-2xl" required>
+        <button type="submit" class="w-full py-6 bg-gradient-to-r from-yellow-500 to-amber-700 rounded-3xl text-black font-bold text-xl">Secure My Spot</button>
+      </form>
+      <button onclick="closeWhitelistPopup()" class="mt-6 text-white/60 underline">Close</button>
+    </div>
+  </div>
+
+  <script>
+    AOS.init({duration:1200, once:true});
+
+    // Live countdown (example: NFT drop April 15 2026)
+    function startCountdown() {
+      const endDate = new Date("2026-04-15T00:00:00").getTime();
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+        const days = Math.floor(distance / (1000*60*60*24));
+        const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+        document.getElementById("countdown").innerHTML = `${days}d ${hours}h until Genesis Drop`;
+      }, 1000);
+    }
+    startCountdown();
+
+    // Carousel auto-rotate
+    let current = 0;
+    const slides = document.querySelectorAll('.carousel-img');
+    setInterval(() => {
+      slides[current].classList.add('opacity-0');
+      current = (current + 1) % slides.length;
+      slides[current].classList.remove('opacity-0');
+    }, 5000);
+
+    // Popups
+    function openWhitelistPopup() { document.getElementById('whitelistPopup').classList.remove('hidden'); }
+    function closeWhitelistPopup() { document.getElementById('whitelistPopup').classList.add('hidden'); }
+  </script>
+</body>
+</html>
